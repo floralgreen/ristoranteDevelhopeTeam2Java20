@@ -6,7 +6,12 @@ public class Main {
 
         System.out.println(nomeRistorante + "\n" +
                 "Menù di Carne: ");
-
+        System.out.println("Secondi piatti" + "\n" +
+                "Salti in bocca alla romana" + "\n" +
+                "Tagliata di manzo" + "\n" +
+                "Grigliata mista" + "\n" +
+                "Abbacchio fritto" + "\n" +
+                "Arrosticini alla brace");
     }
 
 }

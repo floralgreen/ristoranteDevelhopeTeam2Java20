@@ -2,17 +2,22 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String nomeRistorante = "Ristorante Team2 Java20";
+        String nomeRistorante = " ~ RISTORANTE TEAM2 JAVA20 ~ ";
 
+        //TIPO MENÙ
         System.out.println(nomeRistorante + "\n" +
-                "Menù di Carne: ");
-        System.out.println("Secondi piatti" + "\n" +
+                "MENÙ DI CARNE: ");
+
+        //SECONDI PIATTI
+        System.out.println("SECONDI PIATTI" + "\n" +
                 "- Salti in bocca alla romana" + "\n" +
                 "- Tagliata di manzo" + "\n" +
                 "- Grigliata mista" + "\n" +
                 "- Abbacchio fritto" + "\n" +
                 "- Arrosticini alla brace");
-        System.out.println("Dolci: \n" +
+
+        //DOLCI
+        System.out.println("DOLCI  \n" +
                 "- Tiramisù\n" +
                 "- Panna Cotta\n" +
                 "- Sorbetto Limone\n" +
@@ -20,7 +25,7 @@ public class Main {
                 "- Sbriciolata");
 
         //BEVANDE
-        System.out.println("-~- BEVANDE -~-" + "\n" +
+        System.out.println("BEVANDE" + "\n" +
                 "- Acqua Naturale" + "\n" +
                 "- Acqua Minerale" + "\n" +
                 "- Vino Rosso" + "\n" +

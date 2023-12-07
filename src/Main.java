@@ -7,6 +7,13 @@ public class Main {
         System.out.println(nomeRistorante + "\n" +
                 "Menù di Carne: ");
 
+        //BEVANDE
+        System.out.println("-~- BEVANDE -~-" + "\n" +
+                "- Acqua Naturale" + "\n" +
+                "- Acqua Minerale" + "\n" +
+                "- Vino Rosso" + "\n" +
+                "- Vino Bianco" + "\n" +
+                "- Coca Cola");
     }
 
 }

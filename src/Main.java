@@ -18,6 +18,14 @@ public class Main {
                 "- Sorbetto Limone\n" +
                 "- Crostata c/marmellata di visciole\n" +
                 "- Sbriciolata");
+
+        //BEVANDE
+        System.out.println("-~- BEVANDE -~-" + "\n" +
+                "- Acqua Naturale" + "\n" +
+                "- Acqua Minerale" + "\n" +
+                "- Vino Rosso" + "\n" +
+                "- Vino Bianco" + "\n" +
+                "- Coca Cola");
     }
 
 }

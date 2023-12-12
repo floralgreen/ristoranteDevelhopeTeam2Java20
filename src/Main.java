@@ -8,6 +8,14 @@ public class Main {
         System.out.println(nomeRistorante + "\n" +
                 "MENÙ DI CARNE: ");
 
+        // PRIMI PIATTI
+        System.out.println("Primi piatti:\n" +
+                "- Carbonara\n" +
+                "- Amatriciana\n" +
+                "- Lasagna\n" +
+                "- Cacio e pepe\n" +
+                "- Ravioli alla gricia");
+
         //SECONDI PIATTI
         System.out.println("SECONDI PIATTI" + "\n" +
                 "- Salti in bocca alla romana" + "\n" +

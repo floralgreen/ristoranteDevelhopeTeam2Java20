@@ -3,7 +3,7 @@ public abstract class Portata {
     private String nomePortata;
     private double prezzoPortata;
 
-    public Portata(String nomePortata, double prezzoPortata){
+    public Portata(String nomePortata,double prezzoPortata){
         this.nomePortata = nomePortata;
         this.prezzoPortata = prezzoPortata;
     }

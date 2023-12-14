@@ -2,6 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
          SecondoPiatto[] secondiPiatti=new SecondoPiatto[5];
+         Dolce[] dolci = new Dolce[5];
 
 
         SecondoPiatto secondoPiatto1 = new SecondoPiatto("Salti in bocca alla romana",8.50,"Fettine di vittella,salvia,vino bianco,farina 00,prosciutto crudo,burro,pepe,olio");
@@ -15,6 +16,21 @@ public class Main {
         secondiPiatti[2]=secondoPiatto3;
         secondiPiatti[3]=secondoPiatto4;
         secondiPiatti[4]=secondoPiatto5;
+
+        Dolce dolci1= new Dolce("Tiramisù",4.0,"Savoiardi,caffe,uova,cacao amaro,mascarpone");
+        Dolce dolci2= new Dolce("PannaCotta",4.0,"Panna fresca,bacca di vaniglia,zucchero,gelatina,Topping a scelta");
+        Dolce dolci3= new Dolce("Sorbetto al limone",3.0,"Zucchero,Limoncello,succo di limone,albumi");
+        Dolce dolci4= new Dolce("Crostata con marmellata di visciole",3.50,"Farina,burro,sale,zucchero a velo,scorza di limone,tuorli,visciole,confettura di ciligie,zucchero di canna");
+        Dolce dolci5= new Dolce("Sbricioolata",4.0,"Farina,Uova,burro,zucchero,lievito,bacca di vaniglia,Nutella/Crema");
+
+        dolci[0]=dolci1;
+        dolci[1]=dolci2;
+        dolci[2]=dolci3;
+        dolci[3]=dolci4;
+        dolci[4]=dolci5;
+
+
+
 
 
 

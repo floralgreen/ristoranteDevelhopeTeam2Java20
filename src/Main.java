@@ -3,6 +3,7 @@ public class Main {
     public static void main(String[] args) {
          SecondoPiatto[] secondiPiatti=new SecondoPiatto[5];
          Dolce[] dolci = new Dolce[5];
+         Bevanda[] bevande = new Bevanda[5];
 
 
         SecondoPiatto secondoPiatto1 = new SecondoPiatto("Salti in bocca alla romana",8.50,"Fettine di vittella,salvia,vino bianco,farina 00,prosciutto crudo,burro,pepe,olio");
@@ -28,6 +29,19 @@ public class Main {
         dolci[2]=dolci3;
         dolci[3]=dolci4;
         dolci[4]=dolci5;
+
+        Bevanda bevanda1 = new Bevanda("Acqua Naturale", 2.00, "Brocca da 1L");
+        Bevanda bevanda2 = new Bevanda("Acqua Minerale", 2.00, "Brocca da 1L");
+        Bevanda bevanda3 = new Bevanda("Vino Rosso", 5.00, "Vino della casa, 1L");
+        Bevanda bevanda4 = new Bevanda("Vino Bianco", 5.00, "Vino della casa, 1L");
+        Bevanda bevanda5 = new Bevanda("Coca Cola", 3.00, "lattiana da 33cl");
+
+        bevande[0]= bevanda1;
+        bevande[1]= bevanda2;
+        bevande[2]= bevanda3;
+        bevande[3]= bevanda4;
+        bevande[4]= bevanda5;
+
 
 
 

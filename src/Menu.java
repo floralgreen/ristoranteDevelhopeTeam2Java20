@@ -68,20 +68,24 @@ public class Menu {
 
         //Stampo info Menù
         System.out.println("Selezionato il menù di: " + tipoMenuEnum.getNomeMenu() + "\n" +
-                tipoMenuEnum.getDescrizioneMenu());
+                tipoMenuEnum.getDescrizioneMenu() +"\n");
 
         //Stampo Primi Piatti
         System.out.println("- Primi Piatti");
         stampaArrayDiPortata(primiPiatti);
+        System.out.println();
         //Stampo Secondi Piatti
         System.out.println("- Secondi Piatti");
         stampaArrayDiPortata(secondiPiatti);
+        System.out.println();
         //Stampo Dolci
         System.out.println("- Dolci");
         stampaArrayDiPortata(dolci);
+        System.out.println();
         //Stampo Bevande
         System.out.println("- Bevande");
         stampaArrayDiPortata(bevande);
+        System.out.println();
 
         System.out.println("\n-END-");
 

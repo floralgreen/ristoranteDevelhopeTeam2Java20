@@ -55,6 +55,10 @@ public class Main {
         bevande[2] = bevanda3;
         bevande[3] = bevanda4;
         bevande[4] = bevanda5;
+
+        Menu menuDiCarne = new Menu(primiPiatti, secondiPiatti, dolci, bevande, TipoMenuEnum.CARNE);
+
+        menuDiCarne.stampaMenu();
     }
 }
 

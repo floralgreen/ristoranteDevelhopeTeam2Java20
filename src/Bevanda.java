@@ -17,6 +17,6 @@ public class Bevanda extends Portata{
 
     @Override
     public void stampaInfoPortata() {
-        System.out.println(getNomePortata() + "," + getPrezzoPortata() + "," + descrizione);
+        System.out.println(getNomePortata() + ",  €" + getPrezzoPortata()+ ",  \n" + descrizione);
     }
 }

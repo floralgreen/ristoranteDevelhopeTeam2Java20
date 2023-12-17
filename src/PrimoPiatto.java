@@ -20,7 +20,7 @@ public class PrimoPiatto extends Portata {
 
     @Override
     public void stampaInfoPortata() {
-        System.out.println(getNomePortata() + ",  €" + getPrezzoPortata()+ ",  \n" + ingredienti);
+        System.out.println(getNomePortata() + ",  €" + getPrezzoPortata()+ ",  \n" + ingredienti + "\n");
 
     }
 }

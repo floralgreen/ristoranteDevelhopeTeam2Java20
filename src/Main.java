@@ -36,7 +36,7 @@ public class Main {
         Dolce dolci2 = new Dolce("PannaCotta", 4.0, "Panna fresca,bacca di vaniglia,zucchero,gelatina,Topping a scelta");
         Dolce dolci3 = new Dolce("Sorbetto al limone", 3.0, "Zucchero,Limoncello,succo di limone,albumi");
         Dolce dolci4 = new Dolce("Crostata con marmellata di visciole", 3.50, "Farina,burro,sale,zucchero a velo,scorza di limone,tuorli,visciole,confettura di ciligie,zucchero di canna");
-        Dolce dolci5 = new Dolce("Sbricioolata", 4.0, "Farina,Uova,burro,zucchero,lievito,bacca di vaniglia,Nutella/Crema");
+        Dolce dolci5 = new Dolce("Sbriciolata", 4.0, "Farina,Uova,burro,zucchero,lievito,bacca di vaniglia,Nutella/Crema");
 
         dolci[0] = dolci1;
         dolci[1] = dolci2;

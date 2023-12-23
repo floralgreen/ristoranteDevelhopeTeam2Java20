@@ -4,7 +4,7 @@ public abstract class Portata {
     private String nomePortata;
     private double prezzoPortata;
 
-    public Portata(CurrencyEnum currencyEnum, String nomePortata,double prezzoPortata){
+    public Portata(CurrencyEnum currencyEnum, String nomePortata, double prezzoPortata) {
         this.currencyEnum = currencyEnum;
         this.nomePortata = nomePortata;
         this.prezzoPortata = prezzoPortata;
@@ -34,6 +34,8 @@ public abstract class Portata {
         this.prezzoPortata = prezzoPortata;
     }
 
-    public abstract void stampaInfoPortata();
+    public void stampaInfoPortata() {
+        System.out.println(nomePortata + ", " + currencyEnum.getCurrencySymbol() + prezzoPortata + " \n");
+    }
 
 }

@@ -1,8 +1,8 @@
 public class Bevanda extends Portata{
     private String descrizione;
 
-    public Bevanda(String nomePortata, double prezzoPortata, String descrizione) {
-        super(nomePortata,prezzoPortata);
+    public Bevanda(CurrencyEnum currencyEnum, String nomePortata, double prezzoPortata, String descrizione) {
+        super(currencyEnum,nomePortata,prezzoPortata);
         this.descrizione = descrizione;
 
     }
@@ -17,6 +17,7 @@ public class Bevanda extends Portata{
 
     @Override
     public void stampaInfoPortata() {
-        System.out.println(getNomePortata() + ",  €" + getPrezzoPortata()+ ",  \n" + descrizione + "\n");
+        super.stampaInfoPortata();
+        System.out.println(descrizione + "\n");
     }
 }

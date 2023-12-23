@@ -1,49 +1,52 @@
+import java.util.HashSet;
+
 public class Menu {
 
 
-    TipoMenuEnum tipoMenuEnum;
-    PrimoPiatto[] primiPiatti;
-    SecondoPiatto[] secondiPiatti;
-    Dolce[] dolci;
-    Bevanda[] bevande;
+    private TipoMenuEnum tipoMenuEnum;
+    //TODO trovare modo di sitemare sto casino con hashset
+    private HashSet<Portata> primiPiatti;
+    private HashSet<Portata> secondiPiatti;
+    private HashSet<Portata> dolci;
+    private HashSet<Portata> bevande;
 
-    public Menu(PrimoPiatto[] primiPiatti, SecondoPiatto[] secondiPiatti, Dolce[] dolci, Bevanda[] bevande, TipoMenuEnum tipoMenuEnum){
-        this.primiPiatti = primiPiatti;
-        this.secondiPiatti = secondiPiatti;
-        this.dolci = dolci;
-        this.bevande = bevande;
+    public Menu(TipoMenuEnum tipoMenuEnum){
+        this.primiPiatti = new HashSet<Portata>();
+        this.secondiPiatti = new HashSet<Portata>();
+        this.dolci = new HashSet<Portata>();
+        this.bevande = new HashSet<Portata>();
         this.tipoMenuEnum = tipoMenuEnum;
     }
 
-    public PrimoPiatto[] getPrimiPiatti() {
+    public HashSet<Portata> getPrimiPiatti() {
         return primiPiatti;
     }
 
-    public void setPrimiPiatti(PrimoPiatto[] primiPiatti) {
+    public void setPrimiPiatti(HashSet<Portata> primiPiatti) {
         this.primiPiatti = primiPiatti;
     }
 
-    public SecondoPiatto[] getSecondiPiatti() {
+    public HashSet<Portata> getSecondiPiatti() {
         return secondiPiatti;
     }
 
-    public void setSecondiPiatti(SecondoPiatto[] secondiPiatti) {
+    public void setSecondiPiatti(HashSet<Portata> secondiPiatti) {
         this.secondiPiatti = secondiPiatti;
     }
 
-    public Dolce[] getDolci() {
+    public HashSet<Portata> getDolci() {
         return dolci;
     }
 
-    public void setDolci(Dolce[] dolci) {
+    public void setDolci(HashSet<Portata> dolci) {
         this.dolci = dolci;
     }
 
-    public Bevanda[] getBevande() {
+    public HashSet<Portata> getBevande() {
         return bevande;
     }
 
-    public void setBevande(Bevanda[] bevande) {
+    public void setBevande(HashSet<Portata> bevande) {
         this.bevande = bevande;
     }
 
@@ -55,8 +58,8 @@ public class Menu {
         this.tipoMenuEnum = tipoMenuEnum;
     }
 
-    public void stampaArrayDiPortata(Portata[] arrayDaTrasformare) {
-        for (Portata portata: arrayDaTrasformare) {
+    public void stampaHashSetDiPortata(HashSet<Portata> hashSetDaStampare) {
+        for (Portata portata: hashSetDaStampare) {
             portata.stampaInfoPortata();
         }
     }
@@ -72,19 +75,19 @@ public class Menu {
 
         //Stampo Primi Piatti
         System.out.println("- Primi Piatti");
-        stampaArrayDiPortata(primiPiatti);
+        stampaHashSetDiPortata(primiPiatti);
         System.out.println();
         //Stampo Secondi Piatti
         System.out.println("- Secondi Piatti");
-        stampaArrayDiPortata(secondiPiatti);
+        stampaHashSetDiPortata(secondiPiatti);
         System.out.println();
         //Stampo Dolci
         System.out.println("- Dolci");
-        stampaArrayDiPortata(dolci);
+        stampaHashSetDiPortata(dolci);
         System.out.println();
         //Stampo Bevande
         System.out.println("- Bevande");
-        stampaArrayDiPortata(bevande);
+        stampaHashSetDiPortata(bevande);
         System.out.println();
 
         System.out.println("\n-END-");

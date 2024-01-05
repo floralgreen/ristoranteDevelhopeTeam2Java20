@@ -1,8 +1,8 @@
 public class Dolce extends Portata{
     private String ingredienti;
 
-    public Dolce(String nomePortata, double prezzoPortata, String ingredienti) {
-        super(nomePortata,prezzoPortata);
+    public Dolce(CurrencyEnum currencyEnum,String nomePortata, double prezzoPortata, String ingredienti) {
+        super(currencyEnum ,nomePortata,prezzoPortata);
         this.ingredienti = ingredienti;
 
     }
@@ -17,6 +17,7 @@ public class Dolce extends Portata{
 
     @Override
     public void stampaInfoPortata() {
-        System.out.println(getNomePortata() + ",  €" + getPrezzoPortata()+ ",  \n" + ingredienti + "\n");
+        super.stampaInfoPortata();
+        System.out.println(ingredienti);
     }
 }

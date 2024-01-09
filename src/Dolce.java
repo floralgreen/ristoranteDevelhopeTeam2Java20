@@ -18,6 +18,6 @@ public class Dolce extends Portata{
     @Override
     public void stampaInfoPortata() {
         super.stampaInfoPortata();
-        System.out.println(ingredienti);
+        System.out.println(ingredienti + "\n");
     }
 }

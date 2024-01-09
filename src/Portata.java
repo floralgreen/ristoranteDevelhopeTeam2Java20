@@ -35,7 +35,7 @@ public abstract class Portata {
     }
 
     public void stampaInfoPortata() {
-        System.out.println(nomePortata + ", " + currencyEnum.getCurrencySymbol() + prezzoPortata + " \n");
+        System.out.println(nomePortata + ", " + currencyEnum.getCurrencySymbol() + prezzoPortata);
     }
 
 }

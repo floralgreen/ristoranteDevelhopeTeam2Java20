@@ -2,54 +2,42 @@ import java.util.HashSet;
 
 public class Menu {
 
-
+    private String nomeMenu;
+    private String nomeCuoco;
     private TipoMenuEnum tipoMenuEnum;
-    //TODO trovare modo di sitemare sto casino con hashset
-    private HashSet<Portata> antipasti;
-    private HashSet<Portata> primiPiatti;
-    private HashSet<Portata> secondiPiatti;
-    private HashSet<Portata> dolci;
-    private HashSet<Portata> bevande;
+    private HashSet<Portata> portate;
 
-    public Menu(TipoMenuEnum tipoMenuEnm){
-        this.antipasti = new HashSet<Portata>();
-        this.primiPiatti = new HashSet<Portata>();
-        this.secondiPiatti = new HashSet<Portata>();
-        this.dolci = new HashSet<Portata>();
-        this.bevande = new HashSet<Portata>();
+
+    public Menu(String nomeMenu, String nomeCuoco, TipoMenuEnum tipoMenuEnm){
+        this.portate = new HashSet<Portata>();
+        this.nomeMenu = nomeMenu;
+        this.nomeCuoco = nomeCuoco;
         this.tipoMenuEnum = tipoMenuEnm;
     }
 
-    public HashSet<Portata> getPrimiPiatti() {
-        return primiPiatti;
+
+    public String getNomeMenu() {
+        return nomeMenu;
     }
 
-    public void setPrimiPiatti(HashSet<Portata> primiPiatti) {
-        this.primiPiatti = primiPiatti;
+    public void setNomeMenu(String nomeMenu) {
+        this.nomeMenu = nomeMenu;
     }
 
-    public HashSet<Portata> getSecondiPiatti() {
-        return secondiPiatti;
+    public String getNomeCuoco() {
+        return nomeCuoco;
     }
 
-    public void setSecondiPiatti(HashSet<Portata> secondiPiatti) {
-        this.secondiPiatti = secondiPiatti;
+    public void setNomeCuoco(String nomeCuoco) {
+        this.nomeCuoco = nomeCuoco;
     }
 
-    public HashSet<Portata> getDolci() {
-        return dolci;
+    public HashSet<Portata> getPortate() {
+        return portate;
     }
 
-    public void setDolci(HashSet<Portata> dolci) {
-        this.dolci = dolci;
-    }
-
-    public HashSet<Portata> getBevande() {
-        return bevande;
-    }
-
-    public void setBevande(HashSet<Portata> bevande) {
-        this.bevande = bevande;
+    public void setPortate(HashSet<Portata> portate) {
+        this.portate = portate;
     }
 
     public TipoMenuEnum getTipoMenuEnum() {
@@ -60,48 +48,18 @@ public class Menu {
         this.tipoMenuEnum = tipoMenuEnum;
     }
 
-    public void stampaHashSetDiPortata(HashSet<Portata> hashSetDaStampare) {
-        for (Portata portata: hashSetDaStampare) {
+    public void stampaHashSetDiPortata() {
+        for (Portata portata: portate) {
             portata.stampaInfoPortata();
         }
     }
 
     public void aggiungiPortata(Portata portata){
-
-        if (portata != null){
-            if (portata instanceof PrimoPiatto){
-                primiPiatti.add(portata);
-            } else if (portata instanceof SecondoPiatto) {
-                secondiPiatti.add(portata);
-            } else if (portata instanceof Dolce) {
-                dolci.add(portata);
-            } else if (portata instanceof Antipasto) {
-                antipasti.add(portata);
-            } else {
-                bevande.add(portata);
-            }
-        } else {
-            System.out.println("Inserire una portata valida");
-        }
+        portate.add(portata);
     }
 
     public void rimuoviPortata(Portata portata){
-
-        if (portata != null){
-            if (portata instanceof PrimoPiatto){
-                primiPiatti.remove(portata);
-            } else if (portata instanceof SecondoPiatto) {
-                secondiPiatti.remove(portata);
-            } else if (portata instanceof Dolce) {
-                dolci.remove(portata);
-            } else if (portata instanceof Antipasto) {
-                antipasti.remove(portata);
-            } else {
-                bevande.remove(portata);
-            }
-        } else {
-            System.out.println("Inserire una portata valida");
-        }
+        portate.remove(portata);
     }
 
 
@@ -112,29 +70,14 @@ public class Menu {
         System.out.println("Selezionato il menù di: " + tipoMenuEnum.getNomeMenu() + "\n" +
                 tipoMenuEnum.getDescrizioneMenu() +"\n");
 
-        //Stampo Antipasti
-        System.out.println("- Antipasti");
-        stampaHashSetDiPortata(antipasti);
-        System.out.println();
-        //Stampo Primi Piatti
-        System.out.println("- Primi Piatti");
-        stampaHashSetDiPortata(primiPiatti);
-        System.out.println();
-        //Stampo Secondi Piatti
-        System.out.println("- Secondi Piatti");
-        stampaHashSetDiPortata(secondiPiatti);
-        System.out.println();
-        //Stampo Dolci
-        System.out.println("- Dolci");
-        stampaHashSetDiPortata(dolci);
-        System.out.println();
-        //Stampo Bevande
-        System.out.println("- Bevande");
-        stampaHashSetDiPortata(bevande);
+        //TODO STAMPA CON I COLORI
+        //TODO c'è da ciclare e stampare, potete farlo come vi pare ottimizzato o non, scegliete voi
+        //TODO bisogna capire come inserire i titoli delle sezioni
+        System.out.println("");
+        stampaHashSetDiPortata();
         System.out.println();
 
-        System.out.println("\n-END-");
-
+        //System.out.println("\n-END-");
     }
 
 }

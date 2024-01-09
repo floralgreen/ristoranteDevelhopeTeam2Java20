@@ -3,7 +3,7 @@ public class Main {
     public static void main(String[] args) {
 
         Ristorante caffeineCoders = new Ristorante("Caffeine Coders");
-        Menu menuDiCarne = new Menu(TipoMenuEnum.CARNE);
+        Menu menuDiCarne = new Menu("Menù Magna e Zitto", "Ivan Piccioni", TipoMenuEnum.CARNE);
 
         caffeineCoders.aggiungiMenuAlRistorante(menuDiCarne);
 

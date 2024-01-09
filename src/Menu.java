@@ -66,101 +66,47 @@ public class Menu {
         }
     }
 
-    public void aggiungiPortata(PrimoPiatto primoPiatto){
-        if (primoPiatto != null) {
-            primiPiatti.add(primoPiatto);
-            System.out.println("Piatto aggiunto!");
+    public void aggiungiPortata(Portata portata){
+
+        if (portata != null){
+            if (portata instanceof PrimoPiatto){
+                primiPiatti.add(portata);
+            } else if (portata instanceof SecondoPiatto) {
+                secondiPiatti.add(portata);
+            } else if (portata instanceof Dolce) {
+                dolci.add(portata);
+            } else if (portata instanceof Antipasto) {
+                antipasti.add(portata);
+            } else {
+                bevande.add(portata);
+            }
         } else {
-            System.out.println("Non è stato possibile aggiungere il piatto!");
+            System.out.println("Inserire una portata valida");
         }
     }
 
-    public void aggiungiPortata(SecondoPiatto secondoPiatto){
-        if (secondoPiatto != null) {
-            secondiPiatti.add(secondoPiatto);
-            System.out.println("Piatto aggiunto!");
+    public void rimuoviPortata(Portata portata){
+
+        if (portata != null){
+            if (portata instanceof PrimoPiatto){
+                primiPiatti.remove(portata);
+            } else if (portata instanceof SecondoPiatto) {
+                secondiPiatti.remove(portata);
+            } else if (portata instanceof Dolce) {
+                dolci.remove(portata);
+            } else if (portata instanceof Antipasto) {
+                antipasti.remove(portata);
+            } else {
+                bevande.remove(portata);
+            }
         } else {
-            System.out.println("Non è stato possibile aggiungere il piatto!");
+            System.out.println("Inserire una portata valida");
         }
     }
 
-    public void aggiungiPortata(Dolce dolce){
-        if (dolce != null) {
-            dolci.add(dolce);
-            System.out.println("Piatto aggiunto!");
-        } else {
-            System.out.println("Non è stato possibile aggiungere il piatto!");
-        }
-    }
-
-    public void aggiungiPortata(Bevanda bevanda){
-        if (bevanda != null) {
-            bevande.add(bevanda);
-            System.out.println("Bevanda aggiunta!");
-        } else {
-            System.out.println("Non è stato possibile aggiungere la bevanda!");
-        }
-    }
-
-    public void aggiungiPortata(Antipasto antipasto){
-        if (antipasto != null) {
-            antipasti.add(antipasto);
-            System.out.println("Antipasto aggiunto!");
-        } else {
-            System.out.println("Non è stato possibile aggiungere l'antipasto!");
-        }
-    }
-
-    public void rimuoviPortata(PrimoPiatto primoPiatto){
-        if (primiPiatti.contains(primoPiatto)) {
-            primiPiatti.remove(primoPiatto);
-            System.out.println("Piatto rimosso!");
-        } else {
-            System.out.println("Non è stato possibile rimuovere il piatto! non esistente");
-        }
-    }
-
-    public void rimuoviPortata(SecondoPiatto secondoPiatto){
-        if (secondiPiatti.contains(secondoPiatto)) {
-            secondiPiatti.remove(secondoPiatto);
-            System.out.println("Piatto rimosso!");
-        } else {
-            System.out.println("Non è stato possibile rimuovere il piatto! non esistente");
-        }
-    }
-
-    public void rimuoviPortata(Dolce dolce){
-        if (dolci.contains(dolce)) {
-            dolci.remove(dolce);
-            System.out.println("Dolce rimosso!");
-        } else {
-            System.out.println("Non è stato possibile rimuovere il dolce! non esistente");
-        }
-    }
-
-    public void rimuoviPortata(Bevanda bevanda){
-        if (bevande.contains(bevanda)) {
-            bevande.remove(bevanda);
-            System.out.println("Bevanda rimossa!");
-        } else {
-            System.out.println("Non è stato possibile rimuovere la bevanda! non esistente");
-        }
-    }
-
-    public void rimuoviPortata(Antipasto antipasto){
-        if (antipasti.contains(antipasto)) {
-            antipasti.remove(antipasto);
-            System.out.println("Antipasto rimosso!");
-        } else {
-            System.out.println("Non è stato possibile rimuovere l' Antipasto! non esistente");
-        }
-    }
 
 
     public void stampaMenu() {
-
-        //TODO refactoring metodi di stampa info delle Portate, meglio far tornare una Stringa/StringBuilder
-        //altrimenti bisogna fare un casino per la stampa menu.
 
         //Stampo info Menù
         System.out.println("Selezionato il menù di: " + tipoMenuEnum.getNomeMenu() + "\n" +

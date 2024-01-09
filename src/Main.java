@@ -7,11 +7,11 @@ public class Main {
 
         caffeineCoders.aggiungiMenuAlRistorante(menuDiCarne);
 
-        PrimoPiatto primoPiatto1 = new PrimoPiatto("Carbonara", 12.00, "Spaghetti, Guanciale, Uovo intero, Tuorli, Pecorino Romano, Pepe");
-        PrimoPiatto primoPiatto2 = new PrimoPiatto("Amatriciana", 10.00, "800 gr Pomodori maturi, 500 gr Bucatini, 150 gr Pecorino Romano grattugiato, 100 gr Guanciale, Olio extraverrgine di oliva, sale e pepe");
-        PrimoPiatto primoPiatto3 = new PrimoPiatto("Lasagna", 8.00, "350 grams Semola di grano duro rimacinato, Pomodoro,Besciamella,Farina,uova, Tuorli, 300 gr Carne bovina");
-        PrimoPiatto primoPiatto4 = new PrimoPiatto("Cacio e pepe", 7.00, "Spaghetti, Pepe nero in grani, Pecorino romano");
-        PrimoPiatto primoPiatto5 = new PrimoPiatto("Ravioli alla gricia",8.00,"Farina,Sale,Olio,Pecorino romano,Parmiggiano, Pepe");
+        PrimoPiatto primoPiatto1 = new PrimoPiatto(CurrencyEnum.EURO,"Carbonara", 12.00, "Spaghetti, Guanciale, Uovo intero, Tuorli, Pecorino Romano, Pepe");
+        PrimoPiatto primoPiatto2 = new PrimoPiatto(CurrencyEnum.EURO,"Amatriciana", 10.00, "800 gr Pomodori maturi, 500 gr Bucatini, 150 gr Pecorino Romano grattugiato, 100 gr Guanciale, Olio extraverrgine di oliva, sale e pepe");
+        PrimoPiatto primoPiatto3 = new PrimoPiatto(CurrencyEnum.EURO,"Lasagna", 8.00, "350 grams Semola di grano duro rimacinato, Pomodoro,Besciamella,Farina,uova, Tuorli, 300 gr Carne bovina");
+        PrimoPiatto primoPiatto4 = new PrimoPiatto(CurrencyEnum.EURO,"Cacio e pepe", 7.00, "Spaghetti, Pepe nero in grani, Pecorino romano");
+        PrimoPiatto primoPiatto5 = new PrimoPiatto(CurrencyEnum.EURO,"Ravioli alla gricia",8.00,"Farina,Sale,Olio,Pecorino romano,Parmiggiano, Pepe");
 
         SecondoPiatto secondoPiatto1 = new SecondoPiatto(CurrencyEnum.EURO,"Salti in bocca alla romana", 8.50, "Fettine di vittella,salvia,vino bianco,farina 00,prosciutto crudo,burro,pepe,olio");
         SecondoPiatto secondoPiatto2 = new SecondoPiatto(CurrencyEnum.EURO,"Tagliata di manzo", 18.50, "Controfiletto di manzo,sale,olio,rosmarino,pepe");
@@ -36,6 +36,12 @@ public class Main {
         Antipasto antipasto3 = new Antipasto(CurrencyEnum.EURO, "Tris di bruschette", 5.00, "Bruschetta al pomodoro, Bruschetta alle olive, Bruschetta con olio della casa");
         Antipasto antipasto4 = new Antipasto(CurrencyEnum.EURO, "Pizzella con prosciutto crudo", 6.00, "Prosciutto crudo, acqua, sale, olio, farina");
         Antipasto antipasto5 = new Antipasto(CurrencyEnum.EURO, "Mozzarella in carrozza", 4.00, "Mozzarella, pan grattato, uovo, sale");
+
+        menuDiCarne.aggiungiPortata(primoPiatto1);
+        menuDiCarne.aggiungiPortata(primoPiatto2);
+        menuDiCarne.aggiungiPortata(primoPiatto3);
+        menuDiCarne.aggiungiPortata(primoPiatto4);
+        menuDiCarne.aggiungiPortata(primoPiatto5);
 
         menuDiCarne.aggiungiPortata(secondoPiatto1);
         menuDiCarne.aggiungiPortata(secondoPiatto2);

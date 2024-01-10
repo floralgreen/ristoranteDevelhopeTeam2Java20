@@ -1,4 +1,4 @@
-import java.util.HashSet;
+import java.util.*;
 
 public class Menu {
 
@@ -49,9 +49,40 @@ public class Menu {
     }
 
     public void stampaHashSetDiPortata() {
-        for (Portata portata: portate) {
-            portata.stampaInfoPortata();
+        Map<String, List<Portata>> map = filter();
+
+        //recupero le chiavi della mappa presenti nell'ENUM
+        List<String> chiaviMappaEnum = new ArrayList<>();
+        for (TipoPortataEnum tipoPortataEnumCorrente: TipoPortataEnum.values()) {
+            //per ogni ciclo prende l'enum corrente e recupera l'attributo nomePortataPlurale(String) e lo mette nella lista
+            chiaviMappaEnum.add(tipoPortataEnumCorrente.getNomePortataPlurale());
         }
+
+        for (String chiave: chiaviMappaEnum) {
+
+            System.out.println(chiave + ": \n");
+            List<Portata> listaDaStampare = map.get(chiave);
+            for (Portata portataCorrente: listaDaStampare) {
+                portataCorrente.stampaInfoPortata();
+            }
+            //style line
+            System.out.println();
+        }
+    }
+
+    public Map<String, List<Portata>> filter(){
+        Map<String, List<Portata>> map = new HashMap<>();
+
+        for (Portata portata: this.portate) {
+            if (map.containsKey(portata.getTipoPortataEnum().getNomePortataPlurale())){
+
+                map.get(portata.getTipoPortataEnum().getNomePortataPlurale()).add(portata);
+
+            } else {
+                map.put(portata.getTipoPortataEnum().getNomePortataPlurale(), new ArrayList<>(List.of(portata)));
+            }
+        }
+        return map;
     }
 
     public void aggiungiPortata(Portata portata){
@@ -70,14 +101,9 @@ public class Menu {
         System.out.println("Selezionato il menù di: " + tipoMenuEnum.getNomeMenu() + "\n" +
                 tipoMenuEnum.getDescrizioneMenu() +"\n");
 
-        //TODO STAMPA CON I COLORI
-        //TODO c'è da ciclare e stampare, potete farlo come vi pare ottimizzato o non, scegliete voi
-        //TODO bisogna capire come inserire i titoli delle sezioni
-        System.out.println("");
         stampaHashSetDiPortata();
-        System.out.println();
 
-        //System.out.println("\n-END-");
+        System.out.println("\n-END-");
     }
 
 }

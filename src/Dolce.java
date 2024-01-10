@@ -1,8 +1,8 @@
 public class Dolce extends Portata{
     private String ingredienti;
 
-    public Dolce(CurrencyEnum currencyEnum,String nomePortata, double prezzoPortata, String ingredienti) {
-        super(currencyEnum ,nomePortata,prezzoPortata);
+    public Dolce(TipoPortataEnum tipoPortataEnum, CurrencyEnum currencyEnum,String nomePortata,double prezzoPortata,String ingredienti) {
+        super(tipoPortataEnum, currencyEnum, nomePortata, prezzoPortata);
         this.ingredienti = ingredienti;
 
     }

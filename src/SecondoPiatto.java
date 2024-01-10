@@ -2,8 +2,8 @@ public class SecondoPiatto extends  Portata {
 
     private String ingredienti;
 
-   public SecondoPiatto (CurrencyEnum currencyEnum,String nomePortata,double prezzoPortata,String ingredienti) {
-       super(currencyEnum, nomePortata, prezzoPortata);
+   public SecondoPiatto (TipoPortataEnum tipoPortataEnum, CurrencyEnum currencyEnum,String nomePortata,double prezzoPortata,String ingredienti) {
+       super(tipoPortataEnum, currencyEnum, nomePortata, prezzoPortata);
        this.ingredienti = ingredienti;
 
    }

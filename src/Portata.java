@@ -1,13 +1,23 @@
 public abstract class Portata {
 
+    private TipoPortataEnum tipoPortataEnum;
     private CurrencyEnum currencyEnum;
     private String nomePortata;
     private double prezzoPortata;
 
-    public Portata(CurrencyEnum currencyEnum, String nomePortata, double prezzoPortata) {
+    public Portata(TipoPortataEnum tipoPortataEnum, CurrencyEnum currencyEnum, String nomePortata, double prezzoPortata) {
+        this.tipoPortataEnum = tipoPortataEnum;
         this.currencyEnum = currencyEnum;
         this.nomePortata = nomePortata;
         this.prezzoPortata = prezzoPortata;
+    }
+
+    public TipoPortataEnum getTipoPortataEnum() {
+        return tipoPortataEnum;
+    }
+
+    public void setTipoPortataEnum(TipoPortataEnum tipoPortataEnum) {
+        this.tipoPortataEnum = tipoPortataEnum;
     }
 
     public CurrencyEnum getCurrencyEnum() {
@@ -38,4 +48,13 @@ public abstract class Portata {
         System.out.println(nomePortata + ", " + currencyEnum.getCurrencySymbol() + prezzoPortata);
     }
 
+    @Override
+    public String toString() {
+        return "Portata{" +
+                "tipoPortataEnum=" + tipoPortataEnum +
+                ", currencyEnum=" + currencyEnum +
+                ", nomePortata='" + nomePortata + '\'' +
+                ", prezzoPortata=" + prezzoPortata +
+                '}';
+    }
 }

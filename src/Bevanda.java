@@ -1,8 +1,8 @@
 public class Bevanda extends Portata{
     private String descrizione;
 
-    public Bevanda(CurrencyEnum currencyEnum, String nomePortata, double prezzoPortata, String descrizione) {
-        super(currencyEnum,nomePortata,prezzoPortata);
+    public Bevanda(TipoPortataEnum tipoPortataEnum, CurrencyEnum currencyEnum,String nomePortata,double prezzoPortata,String descrizione) {
+        super(tipoPortataEnum, currencyEnum, nomePortata, prezzoPortata);
         this.descrizione = descrizione;
 
     }

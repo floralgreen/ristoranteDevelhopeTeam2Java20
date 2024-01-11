@@ -18,15 +18,7 @@ public enum TipoPortataEnum {
         return nomePortata;
     }
 
-    public void setNomePortata(String nomePortata) {
-        this.nomePortata = nomePortata;
-    }
-
     public String getNomePortataPlurale() {
         return nomePortataPlurale;
-    }
-
-    public void setNomePortataPlurale(String nomePortataPlurale) {
-        this.nomePortataPlurale = nomePortataPlurale;
     }
 }

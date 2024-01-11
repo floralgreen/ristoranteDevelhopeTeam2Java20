@@ -47,21 +47,54 @@ public class Menu {
     public void setTipoMenuEnum(TipoMenuEnum tipoMenuEnum) {
         this.tipoMenuEnum = tipoMenuEnum;
     }
+    public void aggiungiPortata(Portata portata){
+        portate.add(portata);
+    }
 
+    public void rimuoviPortata(Portata portata){
+        portate.remove(portata);
+    }
+
+    //metodo per separare le portate
+    public Map<String, List<Portata>> filter(){
+        //creo una mappa d'appoggio per separare le portate in relative liste
+        Map<String, List<Portata>> mappaConListePortate = new HashMap<>();
+
+        //inserisco le portate nelle rispettive liste nella mappa
+        for (Portata portata: this.portate) {
+            if (mappaConListePortate.containsKey(portata.getTipoPortataEnum().getNomePortataPlurale())){
+
+                mappaConListePortate.get(portata.getTipoPortataEnum().getNomePortataPlurale()).add(portata);
+
+            } else {
+                //se non esiste la lista la prima volta che incontra una nuova chiave viene creata
+                mappaConListePortate.put(portata.getTipoPortataEnum().getNomePortataPlurale(), new ArrayList<>(List.of(portata)));
+            }
+        }
+        return mappaConListePortate;
+    }
     public void stampaHashSetDiPortataOrdinato() {
+        //recupero la mappa con tutte le liste divise
         Map<String, List<Portata>> map = filter();
 
         //recupero le chiavi della mappa presenti nell'ENUM
         List<String> chiaviMappaEnum = new ArrayList<>();
+
+
         for (TipoPortataEnum tipoPortataEnumCorrente: TipoPortataEnum.values()) {
             //per ogni ciclo prende l'enum corrente e recupera l'attributo nomePortataPlurale(String) e lo mette nella lista
             chiaviMappaEnum.add(tipoPortataEnumCorrente.getNomePortataPlurale());
         }
 
+        //treamite le chiavi del enum posso accedere alle liste presenti nella mappa e stamparle una all avolta
         for (String chiave: chiaviMappaEnum) {
 
             System.out.println(chiave + ": \n");
             List<Portata> listaDaStampare = map.get(chiave);
+
+            //posso ordinare tramite l'attributo che voglio
+            listaDaStampare.sort(Comparator.comparing(Portata::getPrezzoPortata));
+
             for (Portata portataCorrente: listaDaStampare) {
                 portataCorrente.stampaInfoPortata();
             }
@@ -81,51 +114,25 @@ public class Menu {
 
         for (String valoreCorrente: valoriEnum) {
 
+            //intestazione Categoria Menu
             System.out.println(valoreCorrente + ": \n");
+
             for (Portata portataCorrente: this.portate) {
                 if (portataCorrente.getTipoPortataEnum().getNomePortataPlurale().equals(valoreCorrente)){
                     portataCorrente.stampaInfoPortata();
                 }
             }
-
             //style line
             System.out.println();
         }
     }
-
-    //metodo per separare le portate
-    public Map<String, List<Portata>> filter(){
-        Map<String, List<Portata>> map = new HashMap<>();
-
-        for (Portata portata: this.portate) {
-            if (map.containsKey(portata.getTipoPortataEnum().getNomePortataPlurale())){
-
-                map.get(portata.getTipoPortataEnum().getNomePortataPlurale()).add(portata);
-
-            } else {
-                map.put(portata.getTipoPortataEnum().getNomePortataPlurale(), new ArrayList<>(List.of(portata)));
-            }
-        }
-        return map;
-    }
-
-    public void aggiungiPortata(Portata portata){
-        portate.add(portata);
-    }
-
-    public void rimuoviPortata(Portata portata){
-        portate.remove(portata);
-    }
-
-
-
     public void stampaMenu() {
 
         //Stampo info Menù
         System.out.println("Selezionato il menù di: " + tipoMenuEnum.getNomeMenu() + "\n" +
                 tipoMenuEnum.getDescrizioneMenu() +"\n");
 
-        stampaHashSetDiPortata();
+        stampaHashSetDiPortataOrdinato();
 
         System.out.println("\n-END-");
     }

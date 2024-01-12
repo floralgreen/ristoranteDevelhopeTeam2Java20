@@ -67,6 +67,6 @@ public class Main {
         menuDiCarne.aggiungiPortata(antipasto4);
         menuDiCarne.aggiungiPortata(antipasto5);
 
-        menuDiCarne.stampaMenu();
+        caffeineCoders.stampaMenuDisponibili(colorEnum.BLACK, backgroundEnum.YELLOW_BACKGROUND);
     }
 }

@@ -132,15 +132,15 @@ public class Menu {
             System.out.println();
         }
     }
-    public void stampaMenu() {
+    public void stampaMenu(colorEnum colore, backgroundEnum sfondo) {
 
         //Stampo info Menù
-        System.out.println("Selezionato il menù di: " + tipoMenuEnum.getNomeMenu() + "\n" +
+        System.out.println(colore + "" + sfondo +"Selezionato il menù di: " + tipoMenuEnum.getNomeMenu() + "\n" +
                 tipoMenuEnum.getDescrizioneMenu() +"\n");
 
         stampaHashSetDiPortataOrdinato();
 
-        System.out.println("\n-END-");
+        System.out.println("\n-END-" + colorEnum.RESET);
     }
 
 }

@@ -56,34 +56,40 @@ public class Menu {
     }
 
     //metodo per separare le portate
-    public Map<String, List<Portata>> filter(){
+    public Map<String, List<Portata>> filtroPortate(){
         //creo una mappa d'appoggio per separare le portate in relative liste
         Map<String, List<Portata>> mappaConListePortate = new HashMap<>();
 
         //inserisco le portate nelle rispettive liste nella mappa
-        for (Portata portata: this.portate) {
-            if (mappaConListePortate.containsKey(portata.getTipoPortataEnum().getNomePortataPlurale())){
+        for (Portata portataCorrente: this.portate) {
+            String chiaveMappa = portataCorrente.getTipoPortataEnum().getNomePortataPlurale();
 
-                mappaConListePortate.get(portata.getTipoPortataEnum().getNomePortataPlurale()).add(portata);
+            if (mappaConListePortate.containsKey(portataCorrente.getTipoPortataEnum().getNomePortataPlurale())){
+
+                List<Portata> listaRecuperata = mappaConListePortate.get(chiaveMappa);
+                listaRecuperata.add(portataCorrente);
+
 
             } else {
                 //se non esiste la lista la prima volta che incontra una nuova chiave viene creata
-                mappaConListePortate.put(portata.getTipoPortataEnum().getNomePortataPlurale(), new ArrayList<>(List.of(portata)));
+                List<Portata> listaNuovaDaInserire = new ArrayList<>(List.of(portataCorrente));
+                mappaConListePortate.put(chiaveMappa, listaNuovaDaInserire);
             }
         }
         return mappaConListePortate;
     }
     public void stampaHashSetDiPortataOrdinato() {
         //recupero la mappa con tutte le liste divise
-        Map<String, List<Portata>> map = filter();
+        Map<String, List<Portata>> map = filtroPortate();
 
         //recupero le chiavi della mappa presenti nell'ENUM
         List<String> chiaviMappaEnum = new ArrayList<>();
 
 
-        for (TipoPortataEnum tipoPortataEnumCorrente: TipoPortataEnum.values()) {
+        for (TipoPortataEnum tipoPortataEnumCorrente : TipoPortataEnum.values()) {
             //per ogni ciclo prende l'enum corrente e recupera l'attributo nomePortataPlurale(String) e lo mette nella lista
-            chiaviMappaEnum.add(tipoPortataEnumCorrente.getNomePortataPlurale());
+            String nomePortataPlurale = tipoPortataEnumCorrente.getNomePortataPlurale();
+            chiaviMappaEnum.add(nomePortataPlurale);
         }
 
         //treamite le chiavi del enum posso accedere alle liste presenti nella mappa e stamparle una all avolta

@@ -2,8 +2,24 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Ristorante caffeineCoders = new Ristorante("Caffeine Coders");
+        Ristorante caffeineCoders = new Ristorante("Caffeine Coders", 5);
         Menu menuDiCarne = new Menu("Menù Magna e Zitto", "Ivan Piccioni", TipoMenuEnum.CARNE);
+
+        Tavolo tavolo1 = new Tavolo(5);
+        Tavolo tavolo2 = new Tavolo(8);
+        Tavolo tavolo3 = new Tavolo(2);
+        Tavolo tavolo4 = new Tavolo(3);
+        Tavolo tavolo5 = new Tavolo(7);
+
+        caffeineCoders.aggiungiTavoloAlRistorante(tavolo1);
+        caffeineCoders.aggiungiTavoloAlRistorante(tavolo2);
+        caffeineCoders.aggiungiTavoloAlRistorante(tavolo3);
+        caffeineCoders.aggiungiTavoloAlRistorante(tavolo4);
+        caffeineCoders.aggiungiTavoloAlRistorante(tavolo5);
+
+        caffeineCoders.prenotaTavolo("Federico",2);
+        caffeineCoders.prenotaTavolo("Ivan",5);
+
 
         caffeineCoders.aggiungiMenuAlRistorante(menuDiCarne);
 
@@ -68,5 +84,9 @@ public class Main {
         menuDiCarne.aggiungiPortata(antipasto5);
 
         caffeineCoders.stampaMenuDisponibili(colorEnum.BLACK, backgroundEnum.YELLOW_BACKGROUND);
+        System.out.println("\n");
+        caffeineCoders.stampaPrenotazioni();
+        caffeineCoders.stampaTavoliLiberi();
+
     }
 }

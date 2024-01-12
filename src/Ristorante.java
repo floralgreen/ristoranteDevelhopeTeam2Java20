@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.HashSet;
 
 public class Ristorante {
@@ -43,8 +44,11 @@ public class Ristorante {
     }
     public void stampaMenuDisponibili(colorEnum colore, backgroundEnum sfondo){
 
+
+        System.out.println(colore + "" + sfondo + "Nome Ristorante: " + nomeRistorante + "\n");
+
         for (Menu menu: menuDisponibili) {
-            menu.stampaMenu(colore, sfondo);
+            menu.stampaMenu();
             System.out.println();
         }
 

@@ -132,11 +132,13 @@ public class Menu {
             System.out.println();
         }
     }
-    public void stampaMenu(colorEnum colore, backgroundEnum sfondo) {
+    public void stampaMenu() {
 
         //Stampo info Menù
-        System.out.println(colore + "" + sfondo +"Selezionato il menù di: " + tipoMenuEnum.getNomeMenu() + "\n" +
-                tipoMenuEnum.getDescrizioneMenu() +"\n");
+        System.out.println("Selezionato il menù di: " + tipoMenuEnum.getNomeMenu() + "\n" +
+                tipoMenuEnum.getDescrizioneMenu() +"\n" +
+                "Cuoco: " + nomeCuoco + "\n" +
+                "Nome Menu: " + nomeMenu);
 
         stampaHashSetDiPortataOrdinato();
 

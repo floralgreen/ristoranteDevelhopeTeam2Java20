@@ -41,10 +41,10 @@ public class Ristorante {
             System.out.println("Impossibile rimuovere il menu selezionato, non esistente");
         }
     }
-    public void stampaMenuDisponibili(){
+    public void stampaMenuDisponibili(colorEnum colore, backgroundEnum sfondo){
 
         for (Menu menu: menuDisponibili) {
-            menu.stampaMenu();
+            menu.stampaMenu(colore, sfondo);
             System.out.println();
         }
 

@@ -114,7 +114,7 @@ public class Ristorante {
         System.out.println("\n");
     }
 
-    public void stampaMenuDisponibili(colorEnum colore, backgroundEnum sfondo) {
+    public void stampaMenuDisponibili(colorEnum colore, colorEnum sfondo) {
 
 
         System.out.println(colore + "" + sfondo + "Nome Ristorante: " + nomeRistorante + "\n");

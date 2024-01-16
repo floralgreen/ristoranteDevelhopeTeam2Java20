@@ -21,7 +21,7 @@ public class PrimoPiatto extends Portata {
     @Override
     public void stampaInfoPortata() {
         super.stampaInfoPortata();
-        System.out.println(ingredienti + "\n");
+        System.out.println(ColorManagement.getIngredientiColor() + ingredienti + "\n");
 
     }
 }

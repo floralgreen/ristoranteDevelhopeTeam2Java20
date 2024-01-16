@@ -83,6 +83,8 @@ public class Main {
         menuDiCarne.aggiungiPortata(antipasto4);
         menuDiCarne.aggiungiPortata(antipasto5);
 
+        ColorManagement.preset1();
+
         caffeineCoders.stampaMenuDisponibili(colorEnum.BLACK, backgroundEnum.YELLOW_BACKGROUND);
         System.out.println("\n");
         caffeineCoders.stampaPrenotazioni();

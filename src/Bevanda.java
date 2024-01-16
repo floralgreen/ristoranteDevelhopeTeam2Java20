@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class Bevanda extends Portata{
     private String descrizione;
 
@@ -18,6 +20,6 @@ public class Bevanda extends Portata{
     @Override
     public void stampaInfoPortata() {
         super.stampaInfoPortata();
-        System.out.println(descrizione + "\n");
+        System.out.println(ColorManagement.getDescrizioneColor() + descrizione + "\n");
     }
 }

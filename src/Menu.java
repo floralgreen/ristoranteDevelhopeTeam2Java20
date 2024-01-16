@@ -1,4 +1,6 @@
+import java.awt.*;
 import java.util.*;
+import java.util.List;
 
 public class Menu {
 
@@ -9,7 +11,7 @@ public class Menu {
 
 
     public Menu(String nomeMenu, String nomeCuoco, TipoMenuEnum tipoMenuEnm){
-        this.portate = new HashSet<Portata>();
+        this.portate = new HashSet<>();
         this.nomeMenu = nomeMenu;
         this.nomeCuoco = nomeCuoco;
         this.tipoMenuEnum = tipoMenuEnm;
@@ -95,7 +97,7 @@ public class Menu {
         //treamite le chiavi del enum posso accedere alle liste presenti nella mappa e stamparle una all avolta
         for (String chiave: chiaviMappaEnum) {
 
-            System.out.println(chiave + ": \n");
+            System.out.println(ColorManagement.getIntestazioneColor() + chiave + ": \n");
             List<Portata> listaDaStampare = map.get(chiave);
 
             //posso ordinare tramite l'attributo che voglio
@@ -135,7 +137,7 @@ public class Menu {
     public void stampaMenu() {
 
         //Stampo info Menù
-        System.out.println("Selezionato il menù di: " + tipoMenuEnum.getNomeMenu() + "\n" +
+        System.out.println(ColorManagement.getBackgroundColor()+ "" + ColorManagement.getNomeCuocoColor() +"Selezionato il menù di: " + tipoMenuEnum.getNomeMenu() + "\n" +
                 tipoMenuEnum.getDescrizioneMenu() +"\n" +
                 "Cuoco: " + nomeCuoco + "\n" +
                 "Nome Menu: " + nomeMenu);

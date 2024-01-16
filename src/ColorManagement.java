@@ -1,4 +1,4 @@
-public class ColorManagement {
+public abstract class ColorManagement {
     private static colorEnum backgroundColor;
     private static colorEnum nomePortataColor;
     private static colorEnum valutaColor;
@@ -11,23 +11,28 @@ public class ColorManagement {
 
     private static colorEnum intestazioneColor;
 
-    //constructor
-    public ColorManagement(colorEnum backgroundColor, colorEnum nomePortataColor, colorEnum valutaColor,
-                           colorEnum ingredientiColor, colorEnum descrizioneColor, colorEnum nomeCuocoColor,
-                           colorEnum nomeMenuColor, colorEnum tipoMenuColor, colorEnum nomeRistoranteColor) {
-        this.backgroundColor = backgroundColor;
-        this.nomePortataColor = nomePortataColor;
-        this.valutaColor = valutaColor;
-        this.ingredientiColor = ingredientiColor;
-        this.descrizioneColor = descrizioneColor;
-        this.nomeCuocoColor = nomeCuocoColor;
-        this.nomeMenuColor = nomeMenuColor;
-        this.tipoMenuColor = tipoMenuColor;
-        this.nomeRistoranteColor = nomeRistoranteColor;
-    }
+    private static colorEnum backgroundReservations;
+    private static colorEnum colorReservations;
+
 
     //Getter & Setter
 
+
+    public static colorEnum getBackgroundReservations() {
+        return backgroundReservations;
+    }
+
+    public static void setBackgroundReservations(colorEnum backgroundReservations) {
+        ColorManagement.backgroundReservations = backgroundReservations;
+    }
+
+    public static colorEnum getColorReservations() {
+        return colorReservations;
+    }
+
+    public static void setColorReservations(colorEnum colorReservations) {
+        ColorManagement.colorReservations = colorReservations;
+    }
 
     public static colorEnum getIntestazioneColor() {
         return intestazioneColor;
@@ -110,21 +115,33 @@ public class ColorManagement {
     }
 
     public static void preset1() {
-        backgroundColor = colorEnum.BLACK_BACKGROUND;
-        nomePortataColor = colorEnum.RED;
-        ingredientiColor = colorEnum.BLUE;
-        descrizioneColor = colorEnum.BLUE;
-        nomeCuocoColor = colorEnum.CYAN;
-        intestazioneColor = colorEnum.GREEN;
+        backgroundColor = colorEnum.WHITE_BACKGROUND;
+        nomePortataColor = colorEnum.BLACK;
+        valutaColor = colorEnum.BLUE;
+        ingredientiColor = colorEnum.GREEN;
+        descrizioneColor = colorEnum.GREEN;
+        nomeCuocoColor = colorEnum.BLACK_BOLD;
+        nomeMenuColor = colorEnum.RED_BOLD;
+        tipoMenuColor = colorEnum.YELLOW_BOLD;
+        nomeRistoranteColor = colorEnum.RED_BOLD;
+        intestazioneColor = colorEnum.RED_BOLD;
+        backgroundReservations = colorEnum.YELLOW_BACKGROUND;
+        colorReservations = colorEnum.BLACK_BOLD;
     }
 
     public static void preset2() {
-        backgroundColor = colorEnum.BLACK_BACKGROUND;
-        nomePortataColor = colorEnum.RED;
-        ingredientiColor = colorEnum.BLUE;
-        descrizioneColor = colorEnum.BLUE;
-        nomeCuocoColor = colorEnum.CYAN;
-        intestazioneColor = colorEnum.GREEN;
+        backgroundColor = colorEnum.CYAN_BACKGROUND;
+        nomePortataColor = colorEnum.BLACK;
+        valutaColor = colorEnum.RED;
+        ingredientiColor = colorEnum.YELLOW;
+        descrizioneColor = colorEnum.YELLOW;
+        nomeCuocoColor = colorEnum.BLACK_BOLD;
+        nomeMenuColor = colorEnum.RED_BOLD;
+        tipoMenuColor = colorEnum.YELLOW_BOLD;
+        nomeRistoranteColor = colorEnum.RED_BOLD;
+        intestazioneColor = colorEnum.RED_BOLD;
+        backgroundReservations = colorEnum.YELLOW_BACKGROUND;
+        colorReservations = colorEnum.BLACK_BOLD;
     }
 }
 

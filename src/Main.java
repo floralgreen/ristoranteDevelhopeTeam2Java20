@@ -85,7 +85,7 @@ public class Main {
 
         ColorManagement.preset1();
 
-        caffeineCoders.stampaMenuDisponibili(colorEnum.BLACK, backgroundEnum.YELLOW_BACKGROUND);
+        caffeineCoders.stampaMenuDisponibili();
         System.out.println("\n");
         caffeineCoders.stampaPrenotazioni();
         caffeineCoders.stampaTavoliLiberi();

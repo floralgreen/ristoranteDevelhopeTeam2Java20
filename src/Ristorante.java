@@ -1,5 +1,7 @@
+import java.awt.*;
 import java.sql.SQLOutput;
 import java.util.*;
+import java.util.function.Function;
 
 public class Ristorante {
 
@@ -65,13 +67,12 @@ public class Ristorante {
                 tavoloCorrente.setFree(false);
                 tavoloCorrente.setPostiOccupati(postiDaOccupare);
                 break;
-            } else {
-                System.out.println("Ci dispiace non abbiamo tavoli disponibili per il vostro numero di persone! :(");
             }
         }
     }
 
     public void stampaPrenotazioni(){
+        System.out.println(ColorManagement.getColorReservations() + "" + ColorManagement.getBackgroundReservations());
         System.out.println("Lista di tutte le prenotazioni del ristorante: \n");
         for (String nomePrenotazione: prenotazioni.keySet()) {
             Tavolo tavoloCorrispondenteAlNome = prenotazioni.get(nomePrenotazione);
@@ -91,10 +92,9 @@ public class Ristorante {
         System.out.println("\n");
     }
 
-    public void stampaMenuDisponibili(colorEnum colore, backgroundEnum sfondo){
+    public void stampaMenuDisponibili(){
 
-
-        System.out.println(colore + "" + sfondo + "Nome Ristorante: " + nomeRistorante + "\n");
+        System.out.println(ColorManagement.getBackgroundColor() + "" + ColorManagement.getNomeRistoranteColor() + "Nome Ristorante: " + nomeRistorante + "\n");
 
         for (Menu menu: menuDisponibili) {
             menu.stampaMenu();

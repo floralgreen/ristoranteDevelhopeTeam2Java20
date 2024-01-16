@@ -4,7 +4,6 @@ public class Dolce extends Portata{
     public Dolce(TipoPortataEnum tipoPortataEnum, CurrencyEnum currencyEnum,String nomePortata,double prezzoPortata,String ingredienti) {
         super(tipoPortataEnum, currencyEnum, nomePortata, prezzoPortata);
         this.ingredienti = ingredienti;
-
     }
 
     public String getIngredienti() {
@@ -18,6 +17,6 @@ public class Dolce extends Portata{
     @Override
     public void stampaInfoPortata() {
         super.stampaInfoPortata();
-        System.out.println(ingredienti + "\n");
+        System.out.println(ColorManagement.getIngredientiColor() + ingredienti + "\n");
     }
 }

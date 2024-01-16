@@ -45,7 +45,7 @@ public abstract class Portata {
     }
 
     public void stampaInfoPortata() {
-        System.out.println(ColorManagement.getNomePortataColor() + nomePortata + ", " + currencyEnum.getCurrencySymbol() + prezzoPortata);
+        System.out.println(ColorManagement.getNomePortataColor() + nomePortata + ", " + ColorManagement.getValutaColor() + currencyEnum.getCurrencySymbol() + prezzoPortata);
     }
 
     @Override

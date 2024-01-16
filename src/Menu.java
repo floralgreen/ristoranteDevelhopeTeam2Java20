@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.util.*;
 import java.util.List;
+import java.util.function.Function;
 
 public class Menu {
 
@@ -137,14 +138,14 @@ public class Menu {
     public void stampaMenu() {
 
         //Stampo info Menù
-        System.out.println(ColorManagement.getBackgroundColor()+ "" + ColorManagement.getNomeCuocoColor() +"Selezionato il menù di: " + tipoMenuEnum.getNomeMenu() + "\n" +
+        System.out.println(ColorManagement.getTipoMenuColor() + "Selezionato il menù di: " + tipoMenuEnum.getNomeMenu() + "\n" +
                 tipoMenuEnum.getDescrizioneMenu() +"\n" +
-                "Cuoco: " + nomeCuoco + "\n" +
-                "Nome Menu: " + nomeMenu);
+                ColorManagement.getNomeCuocoColor() +"Cuoco: " + nomeCuoco + "\n" +
+                ColorManagement.getNomeMenuColor() + "Nome Menu: " + nomeMenu);
 
         stampaHashSetDiPortataOrdinato();
 
-        System.out.println("\n-END-" + colorEnum.RESET);
+        System.out.println(colorEnum.RESET + "\n-END-");
     }
 
 }

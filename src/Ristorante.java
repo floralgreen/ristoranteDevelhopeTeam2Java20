@@ -34,27 +34,32 @@ public class Ristorante {
         this.nomeRistorante = nomeRistorante;
     }
 
-    public void aggiungiMenuAlRistorante(Menu menuDaAggiungere){
+    public void aggiungiMenuAlRistorante(Menu menuDaAggiungere) throws Exception {
         if (menuDaAggiungere != null) {
             menuDisponibili.add(menuDaAggiungere);
         } else {
-            System.out.println("Impossibile aggiungere il menu alla lista");
+            throw new Exception("Impossibile aggiungere il menu alla lista: menu nullo");
         }
     }
 
-    public void rimuoviMenuDalRistorante(Menu menuDaRimuovere) {
+
+    public void rimuoviMenuDalRistorante(Menu menuDaRimuovere)throws Exception {
         if (menuDisponibili.contains(menuDaRimuovere)) {
             menuDisponibili.remove(menuDaRimuovere);
         } else {
-            System.out.println("Impossibile rimuovere il menu selezionato, non esistente");
+            throw new Exception("Impossibile rimuovere il menu selezionato, non esistente");
         }
     }
 
-    public void aggiungiTavoloAlRistorante(Tavolo tavolo){
-        if (tavoliRistorante.size() < totTavoliRistorante){
+
+    public void aggiungiTavoloAlRistorante(Tavolo tavolo)throws Exception {
+        if (tavoliRistorante.size() < totTavoliRistorante) {
             tavoliRistorante.add(tavolo);
+        } else {
+            throw new Exception("Impossibile aggiungere il tavolo, capacità massima raggiunta");
         }
     }
+
     public void prenotaTavolo(String nomeCliente, Integer postiDaOccupare){
 
         for (Tavolo tavoloCorrente: tavoliRistorante) {

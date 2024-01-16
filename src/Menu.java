@@ -47,13 +47,23 @@ public class Menu {
     public void setTipoMenuEnum(TipoMenuEnum tipoMenuEnum) {
         this.tipoMenuEnum = tipoMenuEnum;
     }
-    public void aggiungiPortata(Portata portata){
-        portate.add(portata);
+    public void aggiungiPortata(Portata portata) throws Exception{
+        if (portate.contains(portata)) {
+            throw new Exception("La portata è già presente nella lista.");
+        } else {
+            portate.add(portata);
+        }
     }
 
-    public void rimuoviPortata(Portata portata){
-        portate.remove(portata);
+
+    public void rimuoviPortata(Portata portata)throws Exception {
+        if (portate.contains(portata)) {
+            portate.remove(portata);
+        } else {
+            throw new Exception("La portata non è presente nella lista.");
+        }
     }
+
 
     //metodo per separare le portate
     public Map<String, List<Portata>> filtroPortate(){

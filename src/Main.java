@@ -1,6 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
+        try {
 
         Ristorante caffeineCoders = new Ristorante("Caffeine Coders", 5);
         Menu menuDiCarne = new Menu("Menù Magna e Zitto", "Ivan Piccioni", TipoMenuEnum.CARNE);
@@ -33,7 +34,7 @@ public class Main {
         SecondoPiatto secondoPiatto2 = new SecondoPiatto(TipoPortataEnum.SECONDOPIATTO,CurrencyEnum.EURO,"Tagliata di manzo", 18.50, "Controfiletto di manzo,sale,olio,rosmarino,pepe");
         SecondoPiatto secondoPiatto3 = new SecondoPiatto(TipoPortataEnum.SECONDOPIATTO,CurrencyEnum.EURO,"Grigliata mista", 23.0, "4 salsicce di maiale,4 pancetta di maiale,4 costolette di agnello ,4 braciole di maiale,pepe,olio,aglio,rosmarino,aceto di vino");
         SecondoPiatto secondoPiatto4 = new SecondoPiatto(TipoPortataEnum.SECONDOPIATTO,CurrencyEnum.EURO,"Abbacchio fritto", 12.0, "costolette d agnello,sale,pepe,olio,uovo,pangrattato");
-        SecondoPiatto secondoPiatto5 = new SecondoPiatto(TipoPortataEnum.SECONDOPIATTO,CurrencyEnum.EURO,"Arrosticini alla brace", 11.0, "arrosticini di pecora,sale");
+         SecondoPiatto secondoPiatto5 = new SecondoPiatto(TipoPortataEnum.SECONDOPIATTO,CurrencyEnum.EURO,"Arrosticini alla brace", 11.0, "arrosticini di pecora,sale");
 
         Dolce dolci1 = new Dolce(TipoPortataEnum.DOLCE,CurrencyEnum.EURO,"Tiramisù", 4.0, "Savoiardi,caffe,uova,cacao amaro,mascarpone");
         Dolce dolci2 = new Dolce(TipoPortataEnum.DOLCE,CurrencyEnum.EURO,"PannaCotta", 4.0, "Panna fresca,bacca di vaniglia,zucchero,gelatina,Topping a scelta");
@@ -87,6 +88,10 @@ public class Main {
         System.out.println("\n");
         caffeineCoders.stampaPrenotazioni();
         caffeineCoders.stampaTavoliLiberi();
+
+        } catch (Exception e) {
+            System.out.println("Errore durante l'esecuzione dell applicazione: " + e.getMessage());
+        }
 
     }
 }

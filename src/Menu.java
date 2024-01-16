@@ -152,7 +152,7 @@ public class Menu {
 
         stampaHashSetDiPortataOrdinato();
 
-        System.out.println("\n-END-" + colorEnum.RESET);
+        System.out.println(colorEnum.RESET + "\n-END-");
     }
 
 }

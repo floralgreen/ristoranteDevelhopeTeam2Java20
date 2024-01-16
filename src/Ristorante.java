@@ -9,7 +9,7 @@ public class Ristorante {
     private Map<String, Tavolo> prenotazioni;
     private Integer totTavoliRistorante;
 
-    public Ristorante(String nomeRistorante, Integer totTavoliRistorante){
+    public Ristorante(String nomeRistorante, Integer totTavoliRistorante) {
         this.nomeRistorante = nomeRistorante;
         this.totTavoliRistorante = totTavoliRistorante;
         this.menuDisponibili = new HashSet<>();
@@ -34,7 +34,7 @@ public class Ristorante {
         this.nomeRistorante = nomeRistorante;
     }
 
-    public void aggiungiMenuAlRistorante(Menu menuDaAggiungere){
+    public void aggiungiMenuAlRistorante(Menu menuDaAggiungere) {
         if (menuDaAggiungere != null) {
             menuDisponibili.add(menuDaAggiungere);
         } else {
@@ -50,30 +50,53 @@ public class Ristorante {
         }
     }
 
-    public void aggiungiTavoloAlRistorante(Tavolo tavolo){
-        if (tavoliRistorante.size() < totTavoliRistorante){
+    public void aggiungiTavoloAlRistorante(Tavolo tavolo) {
+        if (tavoliRistorante.size() < totTavoliRistorante) {
             tavoliRistorante.add(tavolo);
         }
     }
-    public void prenotaTavolo(String nomeCliente, Integer postiDaOccupare){
 
-        for (Tavolo tavoloCorrente: tavoliRistorante) {
+    public void prenotaTavoloEfficiente(String nomeCliente, Integer postiDaOccupare) {
+
+
+    }
+
+    public void prenotaTavolo(String nomeCliente, Integer postiDaOccupare) {
+        //variabile d'appoggio per verificare successivamente se con la prenotazione precisa è stata effettuata la prenotazione
+        boolean prenotazioneEffettuata = false;
+
+        for (Tavolo tavoloCorrente : tavoliRistorante) {
             Integer postiTavoloCorrente = tavoloCorrente.getPostiTavolo();
             Boolean tavoloLibero = tavoloCorrente.getFree();
-            if (tavoloLibero && postiTavoloCorrente >= postiDaOccupare){
+            if (tavoloLibero && postiTavoloCorrente == postiDaOccupare) {
                 prenotazioni.put(nomeCliente, tavoloCorrente);
                 tavoloCorrente.setFree(false);
                 tavoloCorrente.setPostiOccupati(postiDaOccupare);
+                prenotazioneEffettuata = true;
                 break;
-            } else {
-                System.out.println("Ci dispiace non abbiamo tavoli disponibili per il vostro numero di persone! :(");
             }
         }
+        //cerca un tavolo che vada bene per i posti da occupare, senza verificare però che sia precisamente uguale il numero dei posti del primo tavolo che incontra
+        if (!prenotazioneEffettuata) {
+            for (Tavolo tavoloCorrente : tavoliRistorante) {
+                Integer postiTavoloCorrente = tavoloCorrente.getPostiTavolo();
+                Boolean tavoloLibero = tavoloCorrente.getFree();
+                if (tavoloLibero && postiTavoloCorrente >= postiDaOccupare) {
+                    prenotazioni.put(nomeCliente, tavoloCorrente);
+                    tavoloCorrente.setFree(false);
+                    tavoloCorrente.setPostiOccupati(postiDaOccupare);
+                    break;
+                } else {
+                    System.out.println("Ci dispiace non abbiamo tavoli disponibili per il vostro numero di persone! :(");
+                }
+            }
+        }
+
     }
 
-    public void stampaPrenotazioni(){
+    public void stampaPrenotazioni() {
         System.out.println("Lista di tutte le prenotazioni del ristorante: \n");
-        for (String nomePrenotazione: prenotazioni.keySet()) {
+        for (String nomePrenotazione : prenotazioni.keySet()) {
             Tavolo tavoloCorrispondenteAlNome = prenotazioni.get(nomePrenotazione);
             System.out.println("Nome Prenotazione: " + nomePrenotazione + ", Per: " + tavoloCorrispondenteAlNome.getPostiOccupati() + " persone");
             tavoloCorrispondenteAlNome.stampaInfoTavolo();
@@ -81,22 +104,22 @@ public class Ristorante {
         System.out.println("\n");
     }
 
-    public void stampaTavoliLiberi(){
+    public void stampaTavoliLiberi() {
         System.out.println("Lista di tutti i tavoli ancora liberi: \n");
-        for (Tavolo tavoloCorrente: tavoliRistorante) {
-            if (tavoloCorrente.getFree()){
+        for (Tavolo tavoloCorrente : tavoliRistorante) {
+            if (tavoloCorrente.getFree()) {
                 tavoloCorrente.stampaInfoTavolo();
             }
         }
         System.out.println("\n");
     }
 
-    public void stampaMenuDisponibili(colorEnum colore, backgroundEnum sfondo){
+    public void stampaMenuDisponibili(colorEnum colore, backgroundEnum sfondo) {
 
 
         System.out.println(colore + "" + sfondo + "Nome Ristorante: " + nomeRistorante + "\n");
 
-        for (Menu menu: menuDisponibili) {
+        for (Menu menu : menuDisponibili) {
             menu.stampaMenu();
             System.out.println();
         }

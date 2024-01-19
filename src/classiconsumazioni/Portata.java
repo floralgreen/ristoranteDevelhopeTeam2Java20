@@ -1,3 +1,8 @@
+package classiconsumazioni;
+
+import enumvari.CurrencyEnum;
+import enumvari.TipoPortataEnum;
+
 public abstract class Portata {
 
     private TipoPortataEnum tipoPortataEnum;
@@ -50,7 +55,7 @@ public abstract class Portata {
 
     @Override
     public String toString() {
-        return "Portata{" +
+        return "MainProgram.Portata{" +
                 "tipoPortataEnum=" + tipoPortataEnum +
                 ", currencyEnum=" + currencyEnum +
                 ", nomePortata='" + nomePortata + '\'' +

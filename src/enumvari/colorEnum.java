@@ -1,3 +1,5 @@
+package enumvari;
+
 public enum colorEnum {
     // Reset
     RESET("\u001B[0m"),

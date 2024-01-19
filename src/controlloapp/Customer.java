@@ -1,3 +1,8 @@
+package controlloapp;
+
+import enumvari.GenderEnum;
+import enumvari.TipoMenuEnum;
+
 public class Customer {
 
     private TipoMenuEnum preference;
@@ -65,7 +70,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
+        return "Prenotazione.Customer{" +
                 "preference=" + preference +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +

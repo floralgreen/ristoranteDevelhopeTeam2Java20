@@ -1,3 +1,5 @@
+package enumvari;
+
 public enum CurrencyEnum {
     EURO("€","EUR"),
     US_DOLLAR("$","USD"),

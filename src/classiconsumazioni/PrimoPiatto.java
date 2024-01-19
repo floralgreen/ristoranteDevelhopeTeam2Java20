@@ -1,7 +1,14 @@
-public class Dolce extends Portata{
+package classiconsumazioni;
+
+import enumvari.CurrencyEnum;
+import enumvari.TipoPortataEnum;
+
+public class PrimoPiatto extends Portata {
+
     private String ingredienti;
 
-    public Dolce(TipoPortataEnum tipoPortataEnum, CurrencyEnum currencyEnum,String nomePortata,double prezzoPortata,String ingredienti) {
+
+    public PrimoPiatto(TipoPortataEnum tipoPortataEnum, CurrencyEnum currencyEnum, String nomePortata, double prezzoPortata, String ingredienti) {
         super(tipoPortataEnum, currencyEnum, nomePortata, prezzoPortata);
         this.ingredienti = ingredienti;
 
@@ -15,9 +22,11 @@ public class Dolce extends Portata{
         this.ingredienti = ingredienti;
     }
 
+
     @Override
     public void stampaInfoPortata() {
         super.stampaInfoPortata();
         System.out.println(ingredienti + "\n");
+
     }
 }

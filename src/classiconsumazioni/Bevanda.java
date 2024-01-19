@@ -1,7 +1,12 @@
-public class Bevanda extends Portata{
+package classiconsumazioni;
+
+import enumvari.CurrencyEnum;
+import enumvari.TipoPortataEnum;
+
+public class Bevanda extends Portata {
     private String descrizione;
 
-    public Bevanda(TipoPortataEnum tipoPortataEnum, CurrencyEnum currencyEnum,String nomePortata,double prezzoPortata,String descrizione) {
+    public Bevanda(TipoPortataEnum tipoPortataEnum, CurrencyEnum currencyEnum, String nomePortata, double prezzoPortata, String descrizione) {
         super(tipoPortataEnum, currencyEnum, nomePortata, prezzoPortata);
         this.descrizione = descrizione;
 

@@ -1,4 +1,7 @@
-import java.sql.SQLOutput;
+package controlloapp;
+
+import enumvari.colorEnum;
+
 import java.util.*;
 
 public class Ristorante {
@@ -115,7 +118,7 @@ public class Ristorante {
     public void stampaMenuDisponibili(colorEnum colore, colorEnum sfondo) {
 
 
-        System.out.println(colore + "" + sfondo + "Nome Ristorante: " + nomeRistorante + "\n");
+        System.out.println(colore + "" + sfondo + "Nome MainProgram.Ristorante: " + nomeRistorante + "\n");
 
         for (Menu menu : menuDisponibili) {
             menu.stampaMenu();

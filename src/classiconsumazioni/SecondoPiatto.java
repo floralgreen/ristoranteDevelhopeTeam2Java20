@@ -1,8 +1,13 @@
-public class SecondoPiatto extends  Portata {
+package classiconsumazioni;
+
+import enumvari.CurrencyEnum;
+import enumvari.TipoPortataEnum;
+
+public class SecondoPiatto extends Portata {
 
     private String ingredienti;
 
-   public SecondoPiatto (TipoPortataEnum tipoPortataEnum, CurrencyEnum currencyEnum,String nomePortata,double prezzoPortata,String ingredienti) {
+   public SecondoPiatto (TipoPortataEnum tipoPortataEnum, CurrencyEnum currencyEnum, String nomePortata, double prezzoPortata, String ingredienti) {
        super(tipoPortataEnum, currencyEnum, nomePortata, prezzoPortata);
        this.ingredienti = ingredienti;
 

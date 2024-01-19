@@ -1,3 +1,5 @@
+package enumvari;
+
 public enum GenderEnum {
 
     MALE("maschio"),

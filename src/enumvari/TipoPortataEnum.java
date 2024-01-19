@@ -1,10 +1,12 @@
+package enumvari;
+
 public enum TipoPortataEnum {
 
-    ANTIPASTO("Antipasto","Antipasti"),
+    ANTIPASTO("ClassiConsumazioni.Antipasto","Antipasti"),
     PRIMOPIATTO("Primo Piatto","Primi Piatti"),
     SECONDOPIATTO("Secondo Piatto","Secondi Piatti"),
-    DOLCE("Dolce","Dolci"),
-    BEVANDA("Bevanda","Bevande");
+    DOLCE("ClassiConsumazioni.Dolce","Dolci"),
+    BEVANDA("ClassiConsumazioni.Bevanda","Bevande");
 
     private String nomePortata;
     private String nomePortataPlurale;

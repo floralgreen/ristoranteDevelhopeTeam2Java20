@@ -1,4 +1,5 @@
-import java.time.OffsetDateTime;
+package controlloapp;
+
 import java.util.*;
 
 public class Tavolo {
@@ -56,9 +57,9 @@ public class Tavolo {
     }
 
     public void stampaInfoTavolo(){
-        System.out.println("Tavolo n° " + numeroTavolo + ", " +
+        System.out.println("Prenotazione.Tavolo n° " + numeroTavolo + ", " +
                 "Posti tavolo: " + postiTavolo + ", " +
-                "Tavolo libero: " + (isFree ? "Si" : "No") + "\n");
+                "Prenotazione.Tavolo libero: " + (isFree ? "Si" : "No") + "\n");
     }
 
     @Override
@@ -76,7 +77,7 @@ public class Tavolo {
 
     @Override
     public String toString() {
-        return "Tavolo{" +
+        return "Prenotazione.Tavolo{" +
                 "isFree=" + isFree +
                 ", postiTavolo=" + postiTavolo +
                 ", numeroTavolo=" + numeroTavolo +

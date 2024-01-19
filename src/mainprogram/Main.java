@@ -1,3 +1,14 @@
+package mainprogram;
+
+import classiconsumazioni.*;
+import enumvari.CurrencyEnum;
+import enumvari.TipoMenuEnum;
+import enumvari.TipoPortataEnum;
+import enumvari.colorEnum;
+import controlloapp.Menu;
+import controlloapp.Ristorante;
+import controlloapp.Tavolo;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -24,7 +35,7 @@ public class Main {
 
         caffeineCoders.aggiungiMenuAlRistorante(menuDiCarne);
 
-        PrimoPiatto primoPiatto1 = new PrimoPiatto(TipoPortataEnum.PRIMOPIATTO,CurrencyEnum.EURO,"Carbonara", 12.00, "Spaghetti, Guanciale, Uovo intero, Tuorli, Pecorino Romano, Pepe");
+        PrimoPiatto primoPiatto1 = new PrimoPiatto(TipoPortataEnum.PRIMOPIATTO, CurrencyEnum.EURO,"Carbonara", 12.00, "Spaghetti, Guanciale, Uovo intero, Tuorli, Pecorino Romano, Pepe");
         PrimoPiatto primoPiatto2 = new PrimoPiatto(TipoPortataEnum.PRIMOPIATTO,CurrencyEnum.EURO,"Amatriciana", 10.00, "800 gr Pomodori maturi, 500 gr Bucatini, 150 gr Pecorino Romano grattugiato, 100 gr Guanciale, Olio extraverrgine di oliva, sale e pepe");
         PrimoPiatto primoPiatto3 = new PrimoPiatto(TipoPortataEnum.PRIMOPIATTO,CurrencyEnum.EURO,"Lasagna", 8.00, "350 grams Semola di grano duro rimacinato, Pomodoro,Besciamella,Farina,uova, Tuorli, 300 gr Carne bovina");
         PrimoPiatto primoPiatto4 = new PrimoPiatto(TipoPortataEnum.PRIMOPIATTO,CurrencyEnum.EURO,"Cacio e pepe", 7.00, "Spaghetti, Pepe nero in grani, Pecorino romano");

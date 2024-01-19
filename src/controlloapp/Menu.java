@@ -1,3 +1,10 @@
+package controlloapp;
+
+import classiconsumazioni.Portata;
+import enumvari.TipoMenuEnum;
+import enumvari.TipoPortataEnum;
+import enumvari.colorEnum;
+
 import java.util.*;
 
 public class Menu {
@@ -130,7 +137,7 @@ public class Menu {
 
         for (String valoreCorrente: valoriEnum) {
 
-            //intestazione Categoria Menu
+            //intestazione Categoria MainProgram.Menu
             System.out.println(valoreCorrente + ": \n");
 
             for (Portata portataCorrente: this.portate) {
@@ -148,7 +155,7 @@ public class Menu {
         System.out.println("Selezionato il menù di: " + tipoMenuEnum.getNomeMenu() + "\n" +
                 tipoMenuEnum.getDescrizioneMenu() +"\n" +
                 "Cuoco: " + nomeCuoco + "\n" +
-                "Nome Menu: " + nomeMenu);
+                "Nome MainProgram.Menu: " + nomeMenu);
 
         stampaHashSetDiPortataOrdinato();
 

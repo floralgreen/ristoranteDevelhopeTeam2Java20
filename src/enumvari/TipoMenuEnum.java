@@ -1,3 +1,5 @@
+package enumvari;
+
 public enum TipoMenuEnum {
 
     CARNE("Carne", "Menù di carne per chiunque voglia provare le bontà della terra Italiana.");

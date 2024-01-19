@@ -1,10 +1,8 @@
 package mainprogram;
 
 import classiconsumazioni.*;
-import enumvari.CurrencyEnum;
-import enumvari.TipoMenuEnum;
-import enumvari.TipoPortataEnum;
-import enumvari.colorEnum;
+import controlloapp.Customer;
+import enumvari.*;
 import controlloapp.Menu;
 import controlloapp.Ristorante;
 import controlloapp.Tavolo;
@@ -29,8 +27,8 @@ public class Main {
         caffeineCoders.aggiungiTavoloAlRistorante(tavolo4);
         caffeineCoders.aggiungiTavoloAlRistorante(tavolo5);
 
-        caffeineCoders.prenotaTavolo("Federico",2);
-        caffeineCoders.prenotaTavolo("Ivan",5);
+        caffeineCoders.prenotaTavolo();
+
 
 
         caffeineCoders.aggiungiMenuAlRistorante(menuDiCarne);

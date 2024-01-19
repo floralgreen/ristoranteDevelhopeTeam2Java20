@@ -9,15 +9,17 @@ public class Ristorante {
     private HashSet<Menu> menuDisponibili;
     private String nomeRistorante;
     private HashSet<Tavolo> tavoliRistorante;
-    private Map<String, Tavolo> prenotazioni;
+    private Map<Customer, Tavolo> prenotazioni;
     private Integer totTavoliRistorante;
+    private List<Customer> listaClienti ;
 
-    public Ristorante(String nomeRistorante, Integer totTavoliRistorante){
+    public Ristorante(String nomeRistorante, Integer totTavoliRistorante) {
         this.nomeRistorante = nomeRistorante;
         this.totTavoliRistorante = totTavoliRistorante;
         this.menuDisponibili = new HashSet<>();
         this.tavoliRistorante = new HashSet<>();
         this.prenotazioni = new HashMap<>();
+        this.listaClienti = new ArrayList<>();
 
     }
 
@@ -46,7 +48,7 @@ public class Ristorante {
     }
 
 
-    public void rimuoviMenuDalRistorante(Menu menuDaRimuovere)throws Exception {
+    public void rimuoviMenuDalRistorante(Menu menuDaRimuovere) throws Exception {
         if (menuDisponibili.contains(menuDaRimuovere)) {
             menuDisponibili.remove(menuDaRimuovere);
         } else {
@@ -54,8 +56,7 @@ public class Ristorante {
         }
     }
 
-
-    public void aggiungiTavoloAlRistorante(Tavolo tavolo)throws Exception {
+    public void aggiungiTavoloAlRistorante(Tavolo tavolo) throws Exception {
         if (tavoliRistorante.size() < totTavoliRistorante) {
             tavoliRistorante.add(tavolo);
         } else {
@@ -63,27 +64,29 @@ public class Ristorante {
         }
     }
 
-    public void prenotaTavolo(String nomeCliente, Integer postiDaOccupare){
-        //variabile d'appoggio per verificare successivamente se con la prenotazione precisa è stata effettuata la prenotazione
+    public void prenotaTavolo(Customer cliente, Integer postiDaOccupare) {
         boolean prenotazioneEffettuata = false;
+
         for (Tavolo tavoloCorrente : tavoliRistorante) {
             Integer postiTavoloCorrente = tavoloCorrente.getPostiTavolo();
             Boolean tavoloLibero = tavoloCorrente.getFree();
-            if (tavoloLibero && postiTavoloCorrente == postiDaOccupare) {
-                prenotazioni.put(nomeCliente, tavoloCorrente);
+
+            if (tavoloLibero && postiTavoloCorrente.equals(postiDaOccupare)) {
+                prenotazioni.put(cliente, tavoloCorrente);
                 tavoloCorrente.setFree(false);
                 tavoloCorrente.setPostiOccupati(postiDaOccupare);
                 prenotazioneEffettuata = true;
                 break;
             }
         }
-        //cerca un tavolo che vada bene per i posti da occupare, senza verificare però che sia precisamente uguale il numero dei posti del primo tavolo che incontra
+
         if (!prenotazioneEffettuata) {
             for (Tavolo tavoloCorrente : tavoliRistorante) {
                 Integer postiTavoloCorrente = tavoloCorrente.getPostiTavolo();
                 Boolean tavoloLibero = tavoloCorrente.getFree();
+
                 if (tavoloLibero && postiTavoloCorrente >= postiDaOccupare) {
-                    prenotazioni.put(nomeCliente, tavoloCorrente);
+                    prenotazioni.put(cliente, tavoloCorrente);
                     tavoloCorrente.setFree(false);
                     tavoloCorrente.setPostiOccupati(postiDaOccupare);
                     break;
@@ -92,17 +95,20 @@ public class Ristorante {
                 }
             }
         }
-
     }
 
     public void stampaPrenotazioni() {
         System.out.println("Lista di tutte le prenotazioni del ristorante: \n");
-        for (String nomePrenotazione : prenotazioni.keySet()) {
-            Tavolo tavoloCorrispondenteAlNome = prenotazioni.get(nomePrenotazione);
-            System.out.println("Nome Prenotazione: " + nomePrenotazione + ", Per: " + tavoloCorrispondenteAlNome.getPostiOccupati() + " persone");
-            tavoloCorrispondenteAlNome.stampaInfoTavolo();
+
+        for (Customer clienteCorrente:prenotazioni.keySet()) {
+            Tavolo tavolo = prenotazioni.get(clienteCorrente);
+
+            System.out.println("Nome Prenotazione: " + clienteCorrente.getFirstName() +
+                    ", Per: " + tavolo.getPostiOccupati() + " persone");
+
+
         }
-        System.out.println("\n");
+
     }
 
     public void stampaTavoliLiberi() {

@@ -27,7 +27,6 @@ public class Main {
         caffeineCoders.aggiungiTavoloAlRistorante(tavolo4);
         caffeineCoders.aggiungiTavoloAlRistorante(tavolo5);
 
-        caffeineCoders.prenotaTavolo();
 
 
 

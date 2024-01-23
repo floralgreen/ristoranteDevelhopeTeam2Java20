@@ -155,7 +155,7 @@ public class Menu {
         System.out.println("Selezionato il menù di: " + tipoMenuEnum.getNomeMenu() + "\n" +
                 tipoMenuEnum.getDescrizioneMenu() +"\n" +
                 "Cuoco: " + nomeCuoco + "\n" +
-                "Nome MainProgram.Menu: " + nomeMenu);
+                "Nome Menu: " + nomeMenu + "\n");
 
         stampaHashSetDiPortataOrdinato();
 

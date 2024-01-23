@@ -70,8 +70,6 @@ public class Customer {
                 "Menù preferito: " + preference.getNomeMenu());
     }
 
-    public void stampaMenu(){
-    }
 
     @Override
     public String toString() {

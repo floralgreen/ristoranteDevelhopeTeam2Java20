@@ -1,5 +1,6 @@
 package controlloapp;
 
+import enumvari.TipoMenuEnum;
 import enumvari.colorEnum;
 
 import java.util.*;
@@ -121,15 +122,28 @@ public class Ristorante {
         System.out.println("\n");
     }
 
-    public void stampaMenuDisponibili(colorEnum colore, colorEnum sfondo) {
-
-
-        System.out.println(colore + "" + sfondo + "Nome Ristorante: " + nomeRistorante + "\n");
-
+    //metodo per stampare tutti i menu disponibilli
+    public void stampaMenuDisponibili() {
         for (Menu menu : menuDisponibili) {
             menu.stampaMenu();
             System.out.println();
         }
+    }
+    public void coloraConsole(colorEnum colore, colorEnum sfondo) {
+        System.out.println(colore + "" + sfondo);
+    }
 
+    public void printMenuCustomer(Customer customer){
+
+        System.out.println("Nome Ristorante: " + getNomeRistorante() + "\n");
+        if (customer.getPreference() == TipoMenuEnum.NONPREFERENCE){
+            this.stampaMenuDisponibili();
+        } else {
+            for (Menu menuCorrente: this.menuDisponibili) {
+                if (menuCorrente.getTipoMenuEnum() == customer.getPreference()){
+                    menuCorrente.stampaMenu();
+                }
+            }
+        }
     }
 }

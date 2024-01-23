@@ -1,8 +1,11 @@
 package enumvari;
 
 public enum TipoMenuEnum {
+    CARNE("Carne", "Menù di carne per chiunque voglia provare le bontà della terra Italiana."),
+    PESCE("pesce","Menù vegetariano per chi non mangia la carne"),
+    VEGANO("vegano","Menù vegano per chi non mangia la carne e alimenti derivati dagli animali"),
+    NONPREFERENCE("nessuna preferenza ","nessun menù per chi invece mangia qualsiasi alimento di origine animale e vegetale");
 
-    CARNE("Carne", "Menù di carne per chiunque voglia provare le bontà della terra Italiana.");
 
 
     private String nomeMenu;

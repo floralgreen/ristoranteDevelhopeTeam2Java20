@@ -3,6 +3,8 @@ package controlloapp;
 import enumvari.GenderEnum;
 import enumvari.TipoMenuEnum;
 
+import java.util.HashSet;
+
 public class Customer {
 
     private TipoMenuEnum preference;
@@ -66,6 +68,9 @@ public class Customer {
                 "Età: " + age + "\n" +
                 "Genere: " + gender + "\n" +
                 "Menù preferito: " + preference.getNomeMenu());
+    }
+
+    public void stampaMenu(){
     }
 
     @Override

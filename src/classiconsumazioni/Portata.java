@@ -55,7 +55,7 @@ public abstract class Portata {
 
     @Override
     public String toString() {
-        return "MainProgram.Portata{" +
+        return "Portata{" +
                 "tipoPortataEnum=" + tipoPortataEnum +
                 ", currencyEnum=" + currencyEnum +
                 ", nomePortata='" + nomePortata + '\'' +

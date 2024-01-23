@@ -126,29 +126,6 @@ public class Menu {
         }
     }
 
-    public void stampaHashSetDiPortata() {
-
-        //recupero le chiavi della mappa presenti nell'ENUM
-        List<String> valoriEnum = new ArrayList<>();
-        for (TipoPortataEnum tipoPortataEnumCorrente: TipoPortataEnum.values()) {
-            //per ogni ciclo prende l'enum corrente e recupera l'attributo nomePortataPlurale(String) e lo mette nella lista
-            valoriEnum.add(tipoPortataEnumCorrente.getNomePortataPlurale());
-        }
-
-        for (String valoreCorrente: valoriEnum) {
-
-            //intestazione Categoria MainProgram.Menu
-            System.out.println(valoreCorrente + ": \n");
-
-            for (Portata portataCorrente: this.portate) {
-                if (portataCorrente.getTipoPortataEnum().getNomePortataPlurale().equals(valoreCorrente)){
-                    portataCorrente.stampaInfoPortata();
-                }
-            }
-            //style line
-            System.out.println();
-        }
-    }
     public void stampaMenu() {
 
         //Stampo info Menù

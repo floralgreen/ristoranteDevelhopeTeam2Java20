@@ -4,6 +4,7 @@ import java.time.OffsetTime;
 
 public class OrariRistorante {
 
+    //TODO NON USARE TURNISTICA BENSì LAVORARE CON ORARI H24 PER SEMPLIFICARE
     private OffsetTime inizioPranzo;
     private OffsetTime finePranzo;
     private OffsetTime inizioCena;

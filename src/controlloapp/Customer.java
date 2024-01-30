@@ -15,7 +15,8 @@ public class Customer {
     private Integer age;
     private GenderEnum gender;
 
-    private Map<String, LoyaltyCard> customerCards;
+    //TODO customerCard singola e cumulativa per tutti i ristoranti(convenzionati)
+    private LoyaltyCard customerCard;
 
 
     public Customer(TipoMenuEnum preference, String firstName, String lastName, Integer age, GenderEnum gender){
@@ -24,7 +25,6 @@ public class Customer {
         this.lastName = lastName;
         this.age = age;
         this.gender = gender;
-        this.customerCards = new HashMap<>();
     }
 
     public TipoMenuEnum getPreference() {
@@ -67,13 +67,6 @@ public class Customer {
         this.gender = gender;
     }
 
-    public Map<String, LoyaltyCard> getCustomerCards() {
-        return customerCards;
-    }
-
-    public void setCustomerCards(Map<String, LoyaltyCard> customerCards) {
-        this.customerCards = customerCards;
-    }
 
     public void printCustomerInfo(){
         System.out.println("Nome: " + firstName + "\n" +

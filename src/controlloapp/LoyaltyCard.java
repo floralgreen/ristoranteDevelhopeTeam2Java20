@@ -4,22 +4,13 @@ import java.util.Objects;
 
 public class LoyaltyCard {
 
-    private String restaurantName;
     private Integer fideltyPoints;
+    //TODO refactoring boolean primitive
     private Boolean isCardActive;
 
     public LoyaltyCard(String restaurantName){
-        this.restaurantName = restaurantName;
         this.fideltyPoints = 0;
         this.isCardActive = true;
-    }
-
-    public String getRestaurantName() {
-        return restaurantName;
-    }
-
-    public void setRestaurantName(String restaurantName) {
-        this.restaurantName = restaurantName;
     }
 
     public Integer getFideltyPoints() {
@@ -54,25 +45,5 @@ public class LoyaltyCard {
         }
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        LoyaltyCard that = (LoyaltyCard) o;
-        return Objects.equals(restaurantName, that.restaurantName) && Objects.equals(fideltyPoints, that.fideltyPoints) && Objects.equals(isCardActive, that.isCardActive);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(restaurantName, fideltyPoints, isCardActive);
-    }
-
-    @Override
-    public String toString() {
-        return "LoyaltyCard{" +
-                "restaurantName='" + restaurantName + '\'' +
-                ", fideltyPoints=" + fideltyPoints +
-                ", isCardActive=" + isCardActive +
-                '}';
-    }
 }

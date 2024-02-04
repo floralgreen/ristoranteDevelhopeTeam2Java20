@@ -1,5 +1,6 @@
 package controlloapp;
 
+import classiconsumazioni.Portata;
 import enumvari.TipoMenuEnum;
 import enumvari.colorEnum;
 
@@ -12,7 +13,7 @@ public class Ristorante {
     private HashSet<Tavolo> tavoliRistorante;
     private Map<Customer, Tavolo> prenotazioni;
     private Integer totTavoliRistorante;
-    private List<Customer> listaClienti ;
+
 
     public Ristorante(String nomeRistorante, Integer totTavoliRistorante) {
         this.nomeRistorante = nomeRistorante;
@@ -20,7 +21,6 @@ public class Ristorante {
         this.menuDisponibili = new HashSet<>();
         this.tavoliRistorante = new HashSet<>();
         this.prenotazioni = new HashMap<>();
-        this.listaClienti = new ArrayList<>();
 
     }
 

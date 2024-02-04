@@ -1,11 +1,10 @@
 package controlloapp;
 
+import classiconsumazioni.Portata;
 import enumvari.GenderEnum;
 import enumvari.TipoMenuEnum;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
 
 public class Customer {
 
@@ -18,13 +17,16 @@ public class Customer {
     //TODO customerCard singola e cumulativa per tutti i ristoranti(convenzionati)
     private LoyaltyCard customerCard;
 
+    private List<Portata> foodOrder;
 
-    public Customer(TipoMenuEnum preference, String firstName, String lastName, Integer age, GenderEnum gender){
+
+    public Customer(TipoMenuEnum preference, String firstName, String lastName, Integer age, GenderEnum gender) {
         this.preference = preference;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.gender = gender;
+        this.foodOrder = new ArrayList<>();
     }
 
     public TipoMenuEnum getPreference() {
@@ -68,14 +70,44 @@ public class Customer {
     }
 
 
-    public void printCustomerInfo(){
+    public LoyaltyCard getCustomerCard() {
+        return customerCard;
+    }
+
+    public void setCustomerCard(LoyaltyCard customerCard) {
+        this.customerCard = customerCard;
+    }
+
+    public List<Portata> getFoodOrder() {
+        return foodOrder;
+    }
+
+    public void setFoodOrder(List<Portata> foodOrder) {
+        this.foodOrder = foodOrder;
+    }
+
+    public void addToOrder(Portata portataToAdd) {
+        foodOrder.add(portataToAdd);
+    }
+
+    public void removeFromOrder(Portata portataToRemove){
+        if (foodOrder.contains(portataToRemove)){
+            foodOrder.remove(portataToRemove);
+        } else {
+            throw new IllegalArgumentException("Portata non presente nel tuo ordine, Impossibile rimuovere!");
+        }
+    }
+    public void printOrder(){
+
+    }
+
+    public void printCustomerInfo() {
         System.out.println("Nome: " + firstName + "\n" +
                 "Cognome: " + lastName + "\n" +
                 "Età: " + age + "\n" +
                 "Genere: " + gender + "\n" +
                 "Menù preferito: " + preference.getNomeMenu());
     }
-
 
     @Override
     public String toString() {

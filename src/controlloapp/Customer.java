@@ -4,6 +4,8 @@ import classiconsumazioni.Portata;
 import enumvari.GenderEnum;
 import enumvari.TipoMenuEnum;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.*;
 
 public class Customer {
@@ -98,7 +100,13 @@ public class Customer {
         }
     }
     public void printOrder(){
+        BigDecimal checkToPay = BigDecimal.valueOf(0);
+        for (Portata portataCorrente: foodOrder) {
+            checkToPay = checkToPay.add(BigDecimal.valueOf(portataCorrente.getPrezzoPortata()));
+            portataCorrente.stampaInfoPortata();
+        }
 
+        System.out.println("Totale ordine: " + checkToPay.setScale(2, RoundingMode.DOWN));
     }
 
     public void printCustomerInfo() {

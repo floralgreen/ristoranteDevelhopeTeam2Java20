@@ -37,6 +37,10 @@ public class LoyaltyCard {
         }
     }
 
+    public void resetPoints(){
+        this.fideltyPoints = 0;
+    }
+
     public void changeActiveStatus(){
         if (this.isCardActive){
             isCardActive = false;

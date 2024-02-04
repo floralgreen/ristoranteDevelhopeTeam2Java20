@@ -4,6 +4,8 @@ import classiconsumazioni.Portata;
 import enumvari.TipoMenuEnum;
 import enumvari.colorEnum;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.*;
 
 public class Ristorante {
@@ -14,13 +16,19 @@ public class Ristorante {
     private Map<Customer, Tavolo> prenotazioni;
     private Integer totTavoliRistorante;
 
+    private Integer pointsToAddAfterPurchase;
 
-    public Ristorante(String nomeRistorante, Integer totTavoliRistorante) {
+    private final Integer maxPointsCard = 50;
+
+
+    public Ristorante(String nomeRistorante, Integer totTavoliRistorante, Integer pointsToAddAfterPurchase) {
         this.nomeRistorante = nomeRistorante;
         this.totTavoliRistorante = totTavoliRistorante;
         this.menuDisponibili = new HashSet<>();
         this.tavoliRistorante = new HashSet<>();
         this.prenotazioni = new HashMap<>();
+        this.pointsToAddAfterPurchase = pointsToAddAfterPurchase;
+
 
     }
 
@@ -144,6 +152,25 @@ public class Ristorante {
                     menuCorrente.stampaMenu();
                 }
             }
+        }
+    }
+
+    public void payCheck(Customer customer){
+        List<Portata> customerOrder = customer.getFoodOrder();
+
+        BigDecimal checkToPay = BigDecimal.valueOf(0);
+        for (Portata portataCorrente: customerOrder) {
+            checkToPay = checkToPay.add(BigDecimal.valueOf(portataCorrente.getPrezzoPortata()));
+        }
+
+        if (customer.getCustomerCard().getFideltyPoints() >= maxPointsCard){
+            System.out.println("Totale pagato: 0€\n" +
+                    "Il cliente ha utilizzato i punti della tessera fedeltà!");
+            customer.getCustomerCard().resetPoints();
+        } else {
+            System.out.println("Totale pagato: " + checkToPay.setScale(2, RoundingMode.DOWN) + "\n" +
+                    "Punti aggiunti: " + pointsToAddAfterPurchase + "\n" +
+                    "Punti carta fedeltà: " + customer.getCustomerCard().getFideltyPoints());
         }
     }
 }

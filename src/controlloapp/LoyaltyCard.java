@@ -5,8 +5,7 @@ import java.util.Objects;
 public class LoyaltyCard {
 
     private Integer fideltyPoints;
-    //TODO refactoring boolean primitive
-    private Boolean isCardActive;
+    private boolean isCardActive;
 
     public LoyaltyCard(String restaurantName){
         this.fideltyPoints = 0;
@@ -21,11 +20,11 @@ public class LoyaltyCard {
         this.fideltyPoints = fideltyPoints;
     }
 
-    public Boolean getCardActive() {
+    public boolean getCardActive() {
         return isCardActive;
     }
 
-    public void setCardActive(Boolean cardActive) {
+    public void setCardActive(boolean cardActive) {
         isCardActive = cardActive;
     }
 

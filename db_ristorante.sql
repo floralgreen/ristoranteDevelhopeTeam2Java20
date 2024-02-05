@@ -41,6 +41,14 @@ CREATE TABLE IF NOT EXISTS ristorante_develhope.ristoranti(
     tot_tavoli_ristorante int not null,
     prenotazione_id int not null
 );
+# ivan piccioni 05/02/2024 | creazione portate
+CREATE TABLE Portate (
+    id_portata INT PRIMARY KEY,
+    nome_portata VARCHAR(255),
+    prezzo_portata VARCHAR(255),
+    tipo_portata_enum Enum,  
+    currency_enum Enum       
+);
 
 
 

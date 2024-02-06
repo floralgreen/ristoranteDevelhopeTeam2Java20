@@ -1,5 +1,6 @@
 CREATE DATABASE IF NOT EXISTS ristorante_develhope;
 
+
 #Federico Carducci 03/02/2024 | creazione tabella prenotazioni
 CREATE TABLE IF NOT EXISTS ristorante_develhope.prenotazioni
 (
@@ -40,22 +41,21 @@ CREATE TABLE IF NOT EXISTS ristorante_develhope.ristoranti(
     tot_tavoli_ristorante int not null,
     prenotazione_id int not null
 );
-
-# ivan piccioni 05/02/2024 | creazione portate
-CREATE TABLE Portate (
-    id_portata INT PRIMARY KEY,
-    nome_portata VARCHAR(255),
-    prezzo_portata VARCHAR(255),
-    tipo_portata_enum Enum,  
-    currency_enum Enum       
+# ivan piccioni 05/02/2024 | creazione portata
+CREATE TABLE IF NOT EXISTS ristorante_develhope.portate(
+    id_portata INT PRIMARY key auto_increment not null,
+    nome_portata VARCHAR(255) not null,
+    prezzo_portata VARCHAR(255) not null,
+    tipo_portata_enum Enum('antipasto','primopiatto','secondopiatto','dolce','bevanda')not null,
+    currency_enum Enum ('euro','us_dollar','pound_sterling')not null
 );
 
 # Luigi Mottola 06/02/2024 | creazione menu_portate
 create table menu_portate (
-	id_menu int not null, 
+	id_menu int not null,
 	id_portate int not null,
 	last_update timestamp not null,
-	primary key (id_menu, id_portate) 
+	primary key (id_menu, id_portate)
 );
 
 

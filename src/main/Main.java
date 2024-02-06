@@ -13,7 +13,7 @@ public class Main {
         try {
 
             //istanzio ristoranti
-            Ristorante caffeineCoders = new Ristorante("Caffeine Coders", 5);
+            Ristorante caffeineCoders = new Ristorante("Caffeine Coders", 5,50);
 
             //istanzioMenu
             Menu menuDiCarne = new Menu("Menù Magna e Zitto", "Ivan Piccioni", TipoMenuEnum.CARNE);
@@ -105,6 +105,13 @@ public class Main {
             //prenotazioni
             caffeineCoders.prenotaTavolo(federico, 2);
 
+            //ordinazione
+            federico.addToOrder(primoPiatto1);
+            federico.addToOrder(secondoPiatto1);
+            federico.addToOrder(dolci1);
+            federico.addToOrder(bevanda1);
+            federico.addToOrder(antipasto1);
+
 
             //stampe
             caffeineCoders.coloraConsole(colorEnum.GREEN_BOLD, colorEnum.BLACK_BACKGROUND);
@@ -112,6 +119,10 @@ public class Main {
             System.out.println("\n");
             caffeineCoders.stampaPrenotazioni();
             caffeineCoders.stampaTavoliLiberi();
+            federico.printOrder();
+
+            //pagare conto
+            caffeineCoders.payCheck(federico, CurrencyEnum.EURO);
 
         } catch (Exception e) {
             System.out.println("Errore durante l'esecuzione dell applicazione: " + e.getMessage());

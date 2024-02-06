@@ -1,6 +1,7 @@
 package controlloapp;
 
 import classiconsumazioni.Portata;
+import enumvari.CurrencyEnum;
 import enumvari.GenderEnum;
 import enumvari.TipoMenuEnum;
 
@@ -28,6 +29,7 @@ public class Customer {
         this.lastName = lastName;
         this.age = age;
         this.gender = gender;
+        this.customerCard = new LoyaltyCard();
         this.foodOrder = new ArrayList<>();
     }
 
@@ -101,12 +103,15 @@ public class Customer {
     }
     public void printOrder(){
         BigDecimal checkToPay = BigDecimal.valueOf(0);
+        CurrencyEnum valuta = null;
+        System.out.println("Ordine di: " + this.getFirstName() + " " + this.getLastName());
         for (Portata portataCorrente: foodOrder) {
             checkToPay = checkToPay.add(BigDecimal.valueOf(portataCorrente.getPrezzoPortata()));
             portataCorrente.stampaInfoPortata();
+            valuta = portataCorrente.getCurrencyEnum();
         }
 
-        System.out.println("Totale ordine: " + checkToPay.setScale(2, RoundingMode.DOWN));
+        System.out.println("Totale ordine: " + checkToPay.setScale(2, RoundingMode.DOWN) + valuta.getCurrencySymbol() + "\n\n");
     }
 
     public void printCustomerInfo() {

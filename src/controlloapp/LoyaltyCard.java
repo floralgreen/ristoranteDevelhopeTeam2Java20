@@ -7,7 +7,7 @@ public class LoyaltyCard {
     private Integer fideltyPoints;
     private boolean isCardActive;
 
-    public LoyaltyCard(String restaurantName){
+    public LoyaltyCard(){
         this.fideltyPoints = 0;
         this.isCardActive = true;
     }

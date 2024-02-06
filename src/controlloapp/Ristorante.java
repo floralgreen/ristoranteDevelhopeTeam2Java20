@@ -1,6 +1,7 @@
 package controlloapp;
 
 import classiconsumazioni.Portata;
+import enumvari.CurrencyEnum;
 import enumvari.TipoMenuEnum;
 import enumvari.colorEnum;
 
@@ -109,7 +110,7 @@ public class Ristorante {
     public void stampaPrenotazioni() {
         System.out.println("Lista di tutte le prenotazioni del ristorante: \n");
 
-        for (Customer clienteCorrente:prenotazioni.keySet()) {
+        for (Customer clienteCorrente : prenotazioni.keySet()) {
             Tavolo tavolo = prenotazioni.get(clienteCorrente);
 
             System.out.println("Nome Prenotazione: " + clienteCorrente.getFirstName() +
@@ -137,38 +138,40 @@ public class Ristorante {
             System.out.println();
         }
     }
+
     public void coloraConsole(colorEnum colore, colorEnum sfondo) {
         System.out.println(colore + "" + sfondo);
     }
 
-    public void printMenuCustomer(Customer customer){
+    public void printMenuCustomer(Customer customer) {
 
         System.out.println("Nome Ristorante: " + getNomeRistorante() + "\n");
-        if (customer.getPreference() == TipoMenuEnum.NONPREFERENCE){
+        if (customer.getPreference() == TipoMenuEnum.NONPREFERENCE) {
             this.stampaMenuDisponibili();
         } else {
-            for (Menu menuCorrente: this.menuDisponibili) {
-                if (menuCorrente.getTipoMenuEnum() == customer.getPreference()){
+            for (Menu menuCorrente : this.menuDisponibili) {
+                if (menuCorrente.getTipoMenuEnum() == customer.getPreference()) {
                     menuCorrente.stampaMenu();
                 }
             }
         }
     }
 
-    public void payCheck(Customer customer){
+    public void payCheck(Customer customer, CurrencyEnum valuta) {
         List<Portata> customerOrder = customer.getFoodOrder();
 
         BigDecimal checkToPay = BigDecimal.valueOf(0);
-        for (Portata portataCorrente: customerOrder) {
+        for (Portata portataCorrente : customerOrder) {
             checkToPay = checkToPay.add(BigDecimal.valueOf(portataCorrente.getPrezzoPortata()));
         }
 
-        if (customer.getCustomerCard().getFideltyPoints() >= maxPointsCard){
-            System.out.println("Totale pagato: 0€\n" +
+        if (customer.getCustomerCard().getFideltyPoints() >= maxPointsCard) {
+            System.out.println("Totale pagato: 0" + valuta.getCurrencySymbol() + "\n" +
                     "Il cliente ha utilizzato i punti della tessera fedeltà!");
             customer.getCustomerCard().resetPoints();
         } else {
-            System.out.println("Totale pagato: " + checkToPay.setScale(2, RoundingMode.DOWN) + "\n" +
+            customer.getCustomerCard().addPoints(pointsToAddAfterPurchase);
+            System.out.println("Totale pagato: " + checkToPay.setScale(2, RoundingMode.DOWN) + valuta.getCurrencySymbol() + "\n" +
                     "Punti aggiunti: " + pointsToAddAfterPurchase + "\n" +
                     "Punti carta fedeltà: " + customer.getCustomerCard().getFideltyPoints());
         }

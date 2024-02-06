@@ -51,12 +51,21 @@ CREATE TABLE IF NOT EXISTS ristorante_develhope.portate(
 );
 
 # Luigi Mottola 06/02/2024 | creazione menu_portate
-create table menu_portate (
+create table ristorante_develhope.menu_portate (
 	id_menu int not null,
 	id_portate int not null,
 	last_update timestamp not null,
 	primary key (id_menu, id_portate)
 );
+
+# Stefano Forcinito 06/02/2024 creazione tabella menu
+create table ristorante_develhope.menu(
+id_menu int not null,
+nome_menu varchar(255) not null,
+nome_cuoco varchar(255) not null,
+tipo_menu enum('carne','pesce','vegano','nonpreference')not null
+);
+
 
 
 

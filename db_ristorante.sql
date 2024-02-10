@@ -63,6 +63,23 @@ create table if not exists dolci (
     constraint dolci_pk primary key (id_dolce)
 );
 
+#Domenico Ribaudo 10/02/2024 | creazione tabella antipasti
+create table if not exists antipasti (
+    id_antipasto         int auto_increment                                                     not null,                                                     
+    nome_antipasto       varchar(255)                                                           not null,
+    prezzo_antipasto     DOUBLE                                                                 not null,
+    tipo_portata_enum    enum ('antipasto', 'primopiatto', 'secondopiatto', 'bevanda', 'dolce') not null,
+    currency_enum        enum ('euro', 'us_dollar', 'pound_sterling')                           not null,
+    ingredienti          varchar(500)                                                           not null,
+    crudo_e_cotto        varchar(500)                                                           not null,
+    menu_id              int                                                                    not null,
+    constraint antipasti_pk primary key (id_antipasto)
+);
+
+
+
+
+
 
 
 

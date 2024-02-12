@@ -86,7 +86,7 @@ currency_enum Enum ('euro','us_dollar','pound_sterling') not null,
 ingredienti varchar(255) not null,
 tipo_cottura varchar(255),
 contorni varchar(255),
-menu_id int
+menu_id int not null
 );
 
 #Luigi Mottola 12/02/2024 | creazione tabella bevande

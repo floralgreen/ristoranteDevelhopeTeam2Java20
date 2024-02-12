@@ -51,7 +51,7 @@ tipo_menu enum('carne','pesce','vegano','nonpreference')not null
 );
 
 #Federico Carducci 10/02/2024 | creazione tabella dolci
-create table if not exists dolci (
+create table if not exists ristorante_develhope.dolci (
     id_dolce             int auto_increment,
     nome_dolce           varchar(255)                                                           not null,
     prezzo_dolce         DOUBLE                                                                 not null,
@@ -64,7 +64,7 @@ create table if not exists dolci (
 );
 
 #Domenico Ribaudo 10/02/2024 | creazione tabella antipasti
-create table if not exists antipasti (
+create table if not exists ristorante_develhope.antipasti (
     id_antipasto         int auto_increment                                                     not null,
     nome_antipasto       varchar(255)                                                           not null,
     prezzo_antipasto     DOUBLE                                                                 not null,
@@ -79,12 +79,12 @@ create table if not exists antipasti (
 #Ivan Piccioni 09/02/2024 | creazione tabella secondi_piatti
 create table if not exists ristorante_develhope.secondi_piatti(
 id_secondo_piatto int primary key auto_increment not null,
-nome_secondo_piatto varchar(255),
-prezzo_secondo_piatto double,
-tipo_portata_enum(Enum)('antipasto','primopiatto','secondopiatto','dolce','bevande'),
-currency_enum(Enum)('euro','us_dollar','pound_sterling'),
-ingredienti varchar(255),
-tipo_cottura varchar(255)
+nome_secondo_piatto varchar(255) not null,
+prezzo_secondo_piatto double not null,
+tipo_portata_enum Enum ('antipasto','primopiatto','secondopiatto','dolce','bevande') not null,
+currency_enum Enum ('euro','us_dollar','pound_sterling') not null,
+ingredienti varchar(255) not null,
+tipo_cottura varchar(255),
 contorni varchar(255)
 );
 

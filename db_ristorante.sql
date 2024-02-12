@@ -129,6 +129,10 @@ alter table ristorante_develhope.tavoli
 add constraint tavoli_ristorante_fk foreign key (ristorante_id) references ristoranti(id_ristorante);
 
 
+#Ivan Piccioni 12/02/2024 aggiunta foreign key secondi_piatti_menu
+alter table ristorante_develhope.secondi_piatti 
+add constraint secondi_piatti_menu_fk foreign key(menu_id)references ristorante_develhope.menu(id_menu);
+
 
 
 

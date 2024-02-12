@@ -117,6 +117,20 @@ constraint primi_piatti_pk primary key (id_primo_piatto)
 
 
 
+#Federico Carducci 10/02/2024 | aggiunta foreign key dolci_menu
+alter table ristorante_develhope.dolci
+add constraint dolci_menu__fk foreign key(menu_id) references ristorante_develhope.menu(id_menu);
+
+#Federico Carducci 10/02/2024 | aggiunta foreign key prenotazioni_tavolo e prenotazioni_customer
+alter table ristorante_develhope.prenotazioni
+add constraint prenotazioni_tavolo_fk foreign key(tavolo_id) references ristorante_develhope.tavoli(id_tavolo),
+add constraint prenotazioni_customer_fk foreign key(customer_id) references ristorante_develhope.customers(id_customer);
+
+#Federico Carducci 10/02/2024 | aggiunta foreign key tavoli_ristorante
+alter table ristorante_develhope.tavoli
+add constraint tavoli_ristorante_fk foreign key (ristorante_id) references ristoranti(id_ristorante);
+
+
 
 
 

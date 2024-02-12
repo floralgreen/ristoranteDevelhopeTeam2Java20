@@ -76,6 +76,18 @@ create table if not exists antipasti (
     constraint antipasti_pk primary key (id_antipasto)
 );
 
+#Luigi Mottola 12/02/2024 | creazione tabella bevande
+create table if not exists bevande (
+id_bevande int auto_increment,
+nome_bevande varchar(255) not null,
+prezzo_bevande double not null,
+tipo_portata_enum enum ('antipasto', 'primopiatto', 'secondopiatto', 'bevanda', 'dolce') not null,
+currency_enum enum ('euro', 'us_dollar', 'pound_sterling') not null,
+descrizione varchar(255) not null,
+grado_alcolico varchar(255) not null,
+menu_id int not null,
+constraint bevande_pk primary key (id_bevande)
+);
 
 
 

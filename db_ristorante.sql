@@ -47,6 +47,7 @@ create table ristorante_develhope.menu(
 id_menu int primary key not null,
 nome_menu varchar(255) not null,
 nome_cuoco varchar(255) not null,
+ristorante_id int not null,
 tipo_menu enum('carne','pesce','vegano','nonpreference')not null
 );
 
@@ -111,6 +112,7 @@ currency_enum     enum ('euro', 'us_dollar', 'pound_sterling') not null,
 ingredienti varchar(500) not null,
 tipo_farina varchar(500) not null,
 forma_pasta varchar(500) not null,
+menu_id int not null,
 constraint primi_piatti_pk primary key (id_primo_piatto)
 );
 
@@ -141,6 +143,14 @@ add constraint secondi_piatti_menu_fk foreign key(menu_id)references ristorante_
 #Domenico Ribaudo 12/02/2024 | aggiunta foreign key antipasti_menu
 alter table ristorante_develhope.antipasti
 add constraint antipasti_menu_fk foreign key (menu_id) references menu(id_menu);
+
+#Stefano Forcinito 12/02/2024 | aggiunta foreign key ristorante_id
+alter table ristorante_develhope.menu
+add constraint ristorante_id_fk foreign key(ristorante_id) references ristorante_develhope.ristoranti(id_ristorante);
+
+#Stefano Forcinito 12/02/2024 | aggiunta foreign key primo_piato
+alter table ristorante_develhope.primi_piatti
+add constraint menu_id_fk foreign key(menu_id) references ristorante_develhope.menu(id_menu);
 
 
 

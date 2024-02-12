@@ -152,6 +152,12 @@ add constraint ristorante_id_fk foreign key(ristorante_id) references ristorante
 alter table ristorante_develhope.primi_piatti
 add constraint menu_id_fk foreign key(menu_id) references ristorante_develhope.menu(id_menu);
 
+#Domenico Ribaudo 13/02/2024 | aggiunta foreign key ristoranti_prenotazioni
+alter table ristorante_develhope.ristoranti 
+add constraint ristoranti_prenotazioni_fk foreign key(prenotazione_id) references prenotazioni(id_prenotazione);
+
+
+
 
 
 

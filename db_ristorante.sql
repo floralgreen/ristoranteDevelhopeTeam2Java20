@@ -87,8 +87,9 @@ ingredienti varchar(255) not null,
 tipo_cottura varchar(255),
 contorni varchar(255)
 );
+
 #Luigi Mottola 12/02/2024 | creazione tabella bevande
-create table if not exists bevande (
+create table if not exists ristorante_develhope.bevande (
 id_bevande int auto_increment,
 nome_bevande varchar(255) not null,
 prezzo_bevande double not null,

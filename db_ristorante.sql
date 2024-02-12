@@ -128,6 +128,10 @@ add constraint prenotazioni_customer_fk foreign key(customer_id) references rist
 alter table ristorante_develhope.tavoli
 add constraint tavoli_ristorante_fk foreign key (ristorante_id) references ristoranti(id_ristorante);
 
+#Luigi Mottola 12/02/2024 | aggiunta foreign key bevande_menu
+alter table ristorante_develhope.bevande 
+add constraint bevande_menu_fk foreign key(menu_id) references ristorante_develhope.menu(id_menu);
+
 
 
 

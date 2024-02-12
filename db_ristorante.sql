@@ -100,6 +100,18 @@ grado_alcolico varchar(255) not null,
 menu_id int not null,
 constraint bevande_pk primary key (id_bevande)
 );
+#Stefano Forcinito 12/02/2024 | creazione tabella primi piatti
+create table if not exists ristorante_develhope.primi_piatti(
+id_primo_piatto int auto_increment not null,
+nome_primo_piatto varchar(255) not null,
+prezzo_primo_piatto double not null,
+tipo_portata_enum enum ('antipasto', 'primopiatto', 'secondopiatto', 'bevanda', 'dolce') not null,
+currency_enum     enum ('euro', 'us_dollar', 'pound_sterling') not null,
+ingredienti varchar(500) not null,
+tipo_farina varchar(500) not null,
+forma_pasta varchar(500) not null,
+constraint primi_piatti_pk primary key (id_primo_piatto)
+);
 
 
 

@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS ristorante_develhope.ristoranti(
 
 # Stefano Forcinito 06/02/2024 creazione tabella menu
 create table ristorante_develhope.menu(
-id_menu int not null,
+id_menu int primary key not null,
 nome_menu varchar(255) not null,
 nome_cuoco varchar(255) not null,
 tipo_menu enum('carne','pesce','vegano','nonpreference')not null
@@ -115,11 +115,9 @@ constraint primi_piatti_pk primary key (id_primo_piatto)
 );
 
 
-
-
 #Federico Carducci 10/02/2024 | aggiunta foreign key dolci_menu
 alter table ristorante_develhope.dolci
-add constraint dolci_menu__fk foreign key(menu_id) references ristorante_develhope.menu(id_menu);
+add constraint dolci_menu_fk foreign key(menu_id) references ristorante_develhope.menu(id_menu);
 
 #Federico Carducci 10/02/2024 | aggiunta foreign key prenotazioni_tavolo e prenotazioni_customer
 alter table ristorante_develhope.prenotazioni

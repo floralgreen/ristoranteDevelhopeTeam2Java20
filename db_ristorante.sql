@@ -50,6 +50,21 @@ nome_cuoco varchar(255) not null,
 tipo_menu enum('carne','pesce','vegano','nonpreference')not null
 );
 
+#Ivan Piccioni 09/02/2024 | creazione tabella secondi_piatti
+create table if not exists ristorante_develhope.secondi_piatti(
+id_secondo_piatto int primary key auto_increment not null,
+nome_secondo_piatto varchar(255),
+prezzo_secondo_piatto double,
+tipo_portata_enum(Enum)('antipasto','primopiatto','secondopiatto','dolce','bevande'),
+currency_enum(Enum)('euro','us_dollar','pound_sterling'),
+ingredienti varchar(255),
+tipo_cottura varchar(255)
+contorni varchar(255)
+);
+
+
+
+
 
 
 

@@ -156,8 +156,13 @@ add constraint menu_id_fk foreign key(menu_id) references ristorante_develhope.m
 alter table ristorante_develhope.ristoranti 
 add constraint ristoranti_prenotazioni_fk foreign key(prenotazione_id) references prenotazioni(id_prenotazione);
 
+#Federico Carducci 16/02/2024 | aggiunta colonna status sulla tabella dolci
+alter table ristorante_develhope.dolci
+add column status enum ('A', 'D') default 'A' not null;
 
-
+#Federico Carducci 16/02/2024 | aggiunta colonna status sulla tabella prenotazioni
+alter table ristorante_develhope.prenotazioni
+add column status enum ('A', 'D') default 'A' not null;
 
 
 

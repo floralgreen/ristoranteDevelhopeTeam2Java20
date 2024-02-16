@@ -174,7 +174,7 @@ add column status enum ('A', 'D') default 'A' not null;
 
 #Stefano Forcinito 16/02/2024 | aggiunta colonna status sulla tabella primi_piatti
 alter table ristorante_develhope.primi_piatti
-add column status enum ('A', 'B') default 'A' not null;
+add column status enum ('A', 'D') default 'A' not null;
 
 
 

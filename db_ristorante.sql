@@ -164,6 +164,14 @@ add column status enum ('A', 'D') default 'A' not null;
 alter table ristorante_develhope.prenotazioni
 add column status enum ('A', 'D') default 'A' not null;
 
+#Luigi Mottola 16/02/2024 | aggiunta colonna status sulla tabella bevande
+alter table ristorante_develhope.bevande 
+add column status enum ('A', 'D') default 'A' not null;
+
+#Luigi Mottola 16/02/2024 | aggiunta colonna status sulla tabella menu
+alter table ristorante_develhope.menu 
+add column status enum ('A', 'D') default 'A' not null;
+
 
 
 

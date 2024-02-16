@@ -177,6 +177,13 @@ alter table ristorante_develhope.primi_piatti
 add column status enum ('A', 'D') default 'A' not null;
 
 
+#Domenico Ribaudo 16/02/2024 | aggiunta colonna status sulla customer
+alter table ristorante_develhope.customers 
+add column status enum ('A', 'D') default 'A' not null;
+
+#Domenico Ribaudo 16/02/2024 | aggiunta colonna status sulla antipasti
+alter table ristorante_develhope.antipasti 
+add column status enum ('A', 'D') default 'A' not null;
 
 
 

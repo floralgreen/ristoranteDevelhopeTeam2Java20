@@ -185,5 +185,27 @@ add column status enum ('A', 'D') default 'A' not null;
 alter table ristorante_develhope.antipasti 
 add column status enum ('A', 'D') default 'A' not null;
 
+#Ivan Piccioni 17/02/2024 | aggiunta colonna status sulla tabella secondi piatti
+alter table ristorante_develhope.secondi_piatti 
+add column status enum ('A', 'D') default 'A' not null;
+
+#Ivan Piccioni 17/02/2024 | aggiunta colonna status sulla tabella ristoranti
+alter table ristorante_develhope.ristoranti  
+add column status enum ('A', 'D') default 'A' not null;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

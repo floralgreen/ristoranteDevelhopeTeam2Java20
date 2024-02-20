@@ -28,3 +28,7 @@ values ('Coca Cola',3.00,'bevanda','euro','lattina da 33cl','0%',1);
 #inserimento dolci
 insert into ristorante_develhope.dolci(nome_dolce, prezzo_dolce, tipo_portata_enum, currency_enum, ingredienti, preparato_al_momento, menu_id)
 values ('Tiramisù',4.00,'dolce','euro','Savoiardi,caffe,uova,cacao amaro,mascarpone', true, 1);
+
+#inserimento prenotazioni
+insert into ristorante_develhope.prenotazioni(tavolo_id, customer_id, ristorante_id)
+values (1, 1, 1);

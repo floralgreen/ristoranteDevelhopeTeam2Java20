@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS ristorante_develhope.ristoranti(
 
 # Stefano Forcinito 06/02/2024 creazione tabella menu
 create table ristorante_develhope.menu(
-id_menu int primary key not null,
+id_menu int auto_increment primary key not null,
 nome_menu varchar(255) not null,
 nome_cuoco varchar(255) not null,
 ristorante_id int not null,

@@ -22,9 +22,9 @@ insert into ristorante_develhope.secondi_piatti (nome_secondo_piatto , prezzo_se
 values("Tagliata di manzo", 18.50,'secondopiatto','euro',"Controfiletto di manzo,sale,olio,rosmarino,pepe", "Blue, Al Sangue, Media, Ben Cotta", "Patate al forno",1);
 
 #inserimento bevande
-insert into ristorante_develhope.bevande(nome_bevanda, prezzo_bevanda, tipo_portata_enum, currency_enum, descrizione, grado_alcolico, menu_id)
+insert into ristorante_develhope.bevande(nome_bevande, prezzo_bevande, tipo_portata_enum, currency_enum, descrizione, grado_alcolico, menu_id)
 values ('Coca Cola',3.00,'bevanda','euro','lattina da 33cl','0%',1);
 
 #inserimento dolci
-insert into ristorante_develhope.dolci(nome_dolci, prezzo_dolci, tipo_portata_enum, currency_enum, ingredienti, preparato_al_momento, menu_id)
+insert into ristorante_develhope.dolci(nome_dolce, prezzo_dolce, tipo_portata_enum, currency_enum, ingredienti, preparato_al_momento, menu_id)
 values ('Tiramisù',4.00,'dolce','euro','Savoiardi,caffe,uova,cacao amaro,mascarpone', true, 1);

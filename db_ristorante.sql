@@ -6,7 +6,8 @@ CREATE TABLE IF NOT EXISTS ristorante_develhope.prenotazioni
 (
     id_prenotazione INT primary key auto_increment not null,
     tavolo_id       int                            not null,
-    customer_id     int                            not null
+    customer_id     int                            not null,
+    ristorante_id   int                            not null
 )
     ENGINE = InnoDB
     DEFAULT CHARSET = utf8mb4
@@ -38,8 +39,7 @@ CREATE TABLE IF NOT EXISTS ristorante_develhope.customers(
 CREATE TABLE IF NOT EXISTS ristorante_develhope.ristoranti(
     id_ristorante int primary key auto_increment not null,
     nome_ristorante  varchar(255) not null,
-    tot_tavoli_ristorante int not null,
-    prenotazione_id int not null
+    tot_tavoli_ristorante int not null
 );
 
 # Stefano Forcinito 06/02/2024 creazione tabella menu
@@ -124,7 +124,8 @@ add constraint dolci_menu_fk foreign key(menu_id) references ristorante_develhop
 #Federico Carducci 10/02/2024 | aggiunta foreign key prenotazioni_tavolo e prenotazioni_customer
 alter table ristorante_develhope.prenotazioni
 add constraint prenotazioni_tavolo_fk foreign key(tavolo_id) references ristorante_develhope.tavoli(id_tavolo),
-add constraint prenotazioni_customer_fk foreign key(customer_id) references ristorante_develhope.customers(id_customer);
+add constraint prenotazioni_customer_fk foreign key(customer_id) references ristorante_develhope.customers(id_customer),
+add constraint prenotazioni_ristoranti_fk foreign key(ristorante_id) references ristorante_develhope.ristoranti(id_ristorante);
 
 #Federico Carducci 10/02/2024 | aggiunta foreign key tavoli_ristorante
 alter table ristorante_develhope.tavoli
@@ -151,10 +152,6 @@ add constraint ristorante_id_fk foreign key(ristorante_id) references ristorante
 #Stefano Forcinito 12/02/2024 | aggiunta foreign key primo_piato
 alter table ristorante_develhope.primi_piatti
 add constraint menu_id_fk foreign key(menu_id) references ristorante_develhope.menu(id_menu);
-
-#Domenico Ribaudo 13/02/2024 | aggiunta foreign key ristoranti_prenotazioni
-alter table ristorante_develhope.ristoranti 
-add constraint ristoranti_prenotazioni_fk foreign key(prenotazione_id) references prenotazioni(id_prenotazione);
 
 #Federico Carducci 16/02/2024 | aggiunta colonna status sulla tabella dolci
 alter table ristorante_develhope.dolci

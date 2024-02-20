@@ -18,4 +18,7 @@ values ('Tagliere di salumi',8.00,'antipasto','euro','Salame, Prosciutto Crudo, 
 insert into ristorante_develhope.primi_piatti(nome_primo_piatto, prezzo_primo_piatto, tipo_portata_enum, currency_enum, ingredienti, tipo_farina, forma_pasta, menu_id)
 values ('Carbonara',12.00,'primopiatto','euro','Spaghetti, Guanciale, Uovo intero, Tuorli, Pecorino Romano, Pepe','Integrale, Farro, 00','Spaghetti',1);
 
+insert into ristorante_develhope.secondi_piatti (nome_secondo_piatto , prezzo_secondo_piatto , tipo_portata_enum, currency_enum, ingredienti, tipo_cottura ,contorni , menu_id)
+values("Tagliata di manzo", 18.50,'secondopiatto','euro',"Controfiletto di manzo,sale,olio,rosmarino,pepe", "Blue, Al Sangue, Media, Ben Cotta", "Patate al forno",1);
+
 

@@ -18,4 +18,10 @@ values ('Tagliere di salumi',8.00,'antipasto','euro','Salame, Prosciutto Crudo, 
 insert into ristorante_develhope.primi_piatti(nome_primo_piatto, prezzo_primo_piatto, tipo_portata_enum, currency_enum, ingredienti, tipo_farina, forma_pasta, menu_id)
 values ('Carbonara',12.00,'primopiatto','euro','Spaghetti, Guanciale, Uovo intero, Tuorli, Pecorino Romano, Pepe','Integrale, Farro, 00','Spaghetti',1);
 
+#inserimento bevande
+insert into ristorante_develhope.bevande(nome_bevanda, prezzo_bevanda, tipo_portata_enum, currency_enum, descrizione, grado_alcolico, menu_id)
+values ('Coca Cola',3.00,'bevanda','euro','lattina da 33cl','0%',1);
 
+#inserimento dolci
+insert into ristorante_develhope.dolci(nome_dolci, prezzo_dolci, tipo_portata_enum, currency_enum, ingredienti, preparato_al_momento, menu_id)
+values ('Tiramisù',4.00,'dolce','euro','Savoiardi,caffe,uova,cacao amaro,mascarpone', true, 1);
